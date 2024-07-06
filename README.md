@@ -12,6 +12,6 @@
 
 ![save_load](https://github.com/saborido/Charset-Explorer/assets/11407070/70f1a0ee-0f64-49ab-a809-1872e0744890)
 
-This repository is in under construction (is my first repository ever, i'm trying to learn how this works...)
+### This repository is in under construction (is my first repository ever, i'm trying to learn how this works...)
 
 ![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
