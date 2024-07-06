@@ -1,0 +1,16 @@
+Page 2:
+
+ 	>Binary: B
+ 	>InK: SShift + K
+
+Page 3:
+
+ 	>Zr0: CShift + Z
+ 	>Del: CShift + D
+ 	>Flp: F y CShift + F
+ 	>6,7,8,9 + SShift
+ 	>Grid: G y CShift + G
+
+Page 6:
+
+ >Quit: CShift + Q

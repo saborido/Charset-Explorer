@@ -1,0 +1,45 @@
+			> Mapa de rutinas y datos en memoria <		(R = Rutina asm)
+			 ------------------------------------
+
+>Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 62967.
+
+>Total de bytes actual: 97 bytes en total (de 62968 hasta 63063 inclusives).
+
+
+-62968-62969:	--- MEMORIA LIBRE ---				-- 2 bytes.
+
+|-62970: Color del fondo de la rejilla.				-- 1 byte.
+|-62971: Color de los puntos del fondo de la rejilla +1.	-- 1 byte.
+|-62972: Color de la tinta de la rejilla +1.			-- 1 byte.
+
+|-62973: Posición de dirección actual (variable "d").		-- 2 bytes.
+|-62974:  " (dir. 16 bit).
+
+		-- A PARTIR DE AQUI SE CARGAN CON EL BLOQUE d_chars.tap --
+
+R:-|62975-62983: Rutina múltiplo de 32 (de vicentecno).		-- 9 bytes.
+
+|-62984: Posición cursor inicio save/load. Múltiplo32 dir.	-- 2 bytes.
+|-62985:  " (dir. 16 bit).
+|-62986: Longitud de grabación/custom.				-- 2 bytes.
+|-62987:  " (dir. 16 bit).
+|-62988: Marca inicio de selección/grabación.			-- 2 bytes.
+|-62989:  " (dir. 16 bit).
+|-62990: Marca final de selección/grabación.			-- 2 bytes.
+|-62991:  " (dir. 16 bit).
+
+-62992-62999: Icono Pixel ON (el cuadrado).			-- 8 bytes.
+-63000-63007: Icono del candado.				-- 8 bytes.
+-63008-63015: Icono triángulo de las bandas de colores.		-- 8 bytes.
+-63016-63023: Icono de la mano solar.				-- 8 bytes.
+-63024-63031: Guardar charset en edición.			-- 8 bytes.
+
+|-63032: Guardar variable del sistema CHARS actual.		-- 2 bytes.
+|-63033:  " (dir. 16 bit).
+|-63034: Activador de la barra de UDG's.			-- 1 byte.
+|-63035: Guardar color del borde de la pantalla.		-- 1 byte.
+|-63036: Guardar en Tape(1), Disk(2), RAM(3).			-- 1 byte.
+|-63037: Modo de guardado/carga. Load(0), Save(1), Verify(2).	-- 1 byte.
+|-63038: Variable del modo de grabación.			-- 1 byte.
+
+R:|-*63039-63063: Rutina MicroHobby CharSets.			-- 25 bytes.

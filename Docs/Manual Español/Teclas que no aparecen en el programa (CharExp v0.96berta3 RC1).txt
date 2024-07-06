@@ -1,0 +1,49 @@
+Teclas que no aparecen en el programa:
+-------------------------------------
+
+ Aunque aparecen en el manual en sus correspondientes apartados, no aparecen en el programa, y las junto aquí para
+ tenerlas como referencia:
+
+
+-En el Modo Visor:
+-----------------
+
+	>Números del 1 al 8, para entrar al Modo Edición con el cursor en la columna del número pulsado.
+
+	>M: Pone una marca de selección de inicio para borrar/mover/copiar/salvar o cargar datos.
+	>CShift + M: Pone una marca de selección final para borrar/mover/copiar/salvar o cargar datos.
+	>SShift + M (el punto): Limpia las marcas de selección que hayas puesto.
+
+	>SShift + Z: Borra los datos entre las marcas de selección.
+	>SShift + X: Mueve los datos entre las marcas de selección a la dirección actual.
+	>SShift + V: Copia los datos entre las marcas de selección a la dirección actual.
+
+
+-En el Modo Edición:
+-------------------
+
+	>Las teclas de desplazamiento Q, W, E, A, S, D, Z y C. También la X, M, N y puede que alguna más.
+
+	>L: Recarga la barra de Posición, la de UDG y la de Sprites.
+	>SShift + R: Recarga la rejilla del char y las barras de Posición, UDG y Sprites).
+
+
+-En ambos Modos:
+---------------
+
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair): 'Acomodar' el char.
+	>SShift + 0 (Disparo en Joystick Sinclair): Invierte el char. << COMPROBAR ESTO <<
+
+
+-En el menú de selección de 'Useful Locations':
+----------------------------------------------
+
+	>Números del 0 al 9, cada uno apuntando a cierta parte de la memoria:
+
+		>1: 1er Tercio de la pantalla (16384).			>2: 2ndo Tercio de la pantalla (18432).
+		>3: 3er Tercio de la pantalla (20480).			>4: Atributos de color de la pantalla (22528).
+		>5: Variables del sistema en 128k, buffer de la		>6: Comienzo de este programa (25200).
+		   impresora en 48k (23296). Las variables del		>8: Rutinas, datos y variables del
+		   sistema en 48k empiezan en 23552.			   programa (62968).
+		>7: Memoria de usuario libre (55400).			>0: Principio de la ROM (00000).
+		>9: Rutina MH charset (63040).

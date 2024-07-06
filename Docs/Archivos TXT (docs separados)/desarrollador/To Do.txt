@@ -1,0 +1,41 @@
+To Do:
+-----
+
+-Linea 7216, GO SUB 246:GO TO 95, mirar mas lineas parecidas y simplificar en lo posible (7237). -- WHAT? --
+
+-Si el caracter no es multiplo de 8 (se ha desplazado arriba o abajo), se puede editar
+ el bloque si el cursor esta previamente en una zona permitida de escritura, aunque la
+ otra parte del bloque esté en una zona protegida contra escritura.
+
+-Que el cargar no chafe partes del programa. -- NO HAY PLANES PARA ARREGLARLO, TEN CUIDADO AL CARGAR --
+
+-Chequear todas las posibilidades de guardado y carga en todos los modelos de Spectrum más conocidos.
+
+
+Acerca de las marcas de selección:
+---------------------------------
+
+ -Mirar donde hace el loop cuando comprueba si se va a borrar con SShift+X o +Z la zona
+  de las variables y la rutina de MH charsets y simplificarlo.	-- FIXED, CREO --
+
+ -No comprueba si se va a borrar una zona de la ROM.	-- FIXED --
+
+ -No se puede seleccionar la dirección 00000.	-- ESTO SE VA A QUEDAR ASI CREO... --
+
+ -Las direcciones no aparecen con ceros delante en las marcas de selección en decimal. -- FIXED --
+
+
+Quitar al compilar:
+------------------
+
+ -Borrar TODAS las linas que empiecen con un REM. -- HECHO --
+
+ -Borrar TODOS los espacios del principio de subrutinas.
+
+ -Cambiar TODOS los CODE = "*" por el numero del caracter.
+
+ -Cambiar TODOS los VAL "numero" por solo el numero. Compilado ocupa menos espacio, creo.
+
+ -La comprobacion de si existe la ayuda. -- YA NO HAY AYUDA INTEGRADA --
+
+ -Borrar las lineas: 1

@@ -1,0 +1,47 @@
+Keys that's not appear in the program:
+-------------------------------------
+
+ Although they appear in the manual in their corresponding sections, they don't appear in the program, and I put them
+ here for reference:
+
+
+-In View Mode:
+-------------
+
+	>Numbers from 1 to 8, to enter Edit Mode, with cursor in the pressed number column.
+
+	>M: Puts a start selection mark to delete/move/copy/save or load data.
+	>CShift + M: Puts an end selection mark to delete/move/copy/save or load data.
+	>SShift + M (the Dot): Clear any selection mark you've set.
+
+	>SShift + Z: Delete data between selection marks.
+	>SShift + X: Move data between selection marks to current address location.
+	>SShift + V: Copy data between selection marks to current address location.
+
+
+-In Edit Mode:
+-------------
+
+	>L: Reload the Position, UDG and Sprites bars.
+	>SShift + R: Reload the char grid and the Position, UDG and Sprites bars.
+	>1, 2 & 3: Sprite mode offset (-1, +1 & reset at 0).
+
+
+-In both Modes:
+--------------
+
+	>SShift + 5, 6, 7 and 8 (Sinclair Joystick): 'Accommodate' the char in grid.
+	>SShift + 0 (Shot on Sinclair Joystick): Invert the char.
+
+
+-In the 'Useful Locations' menu ('L' key in View Mode):
+------------------------------------------------------
+
+	>Numbers from 0 to 9, each pointing to some portion of memory:
+
+		>1: 1st third of screen (16384).		-2: 2nd third of screen (18432).
+		>3: 3rd third of screen (20480).		-4: Screen color Attributes (22528).
+		>5: System Variables in 128k, Printer Buffer in 48k (23296). System variables in 48k start at 23552.
+		>6: Program code start (25200).			-7: Free User Memory (55400).
+		>8: Program routines, data and variables (62968).
+		>9: MH charset routine (63040).			-0: Start of ROM (00000).

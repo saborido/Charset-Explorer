@@ -1,0 +1,24 @@
+Tanto en el Modo Visor como en el Modo Edición se repiten las siguientes teclas:
+-------------------------------------------------------------------------------
+
+ Aunque estas teclas aparecen el manual, las junto aquí para saber cuáles son las mismas (y hacen exactamente lo
+ mismo) en los dos modos. Todas las demás teclas difieren, aunque hagan la misma acción.
+
+	>B: Modo Binario.
+
+	>G: Cambia el color de fondo de la rejilla.
+	>CShift + G: Cambia el color de los puntos de fondo (píxeles inactivos) de la rejilla.
+	>SShift + K: Cambia el color de la tinta (píxeles activos) de la rejilla.
+
+	>CShift + D: Borra el char actual.		>CShift + Z: Borra la fila (byte) seleccionada en amarillo.
+
+	>F: Voltear el char verticalmente.		>CShift + F: Voltear el char horizontalmente.
+
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair): 'Acomodar' el char (desplazarlo por la rejilla).
+	>SShift + 0 (Disparo en Joystick Sinclair): Invierte el char.
+
+	>CShift + Q: Sale al basic (haz un RUN para volver al programa).
+
+
+ Pocas, ¿eh? lo he hecho para dar por cu$%!... no hombre, es porque en cada modo tienen un uso diferente, y sería
+ una liada mayor para la organización del teclado intentar cambiarlas, aunque escucho recomendaciones...

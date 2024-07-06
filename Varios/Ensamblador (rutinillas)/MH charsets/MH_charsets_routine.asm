@@ -1,0 +1,12 @@
+ORG 63039
+	LD HL, 15360	;CharSet_ROM
+	JR (FINAL)
+	LD HL, 62808	;CharSet_1
+	JR (FINAL)
+	LD HL, 63576	;CharSet_2
+	JR (FINAL)
+	LD HL, 64344	;CharSet_3
+FINAL:
+	LD (23606), HL
+	LD BC, 0
+	RET
