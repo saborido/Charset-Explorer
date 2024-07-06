@@ -9,6 +9,9 @@
 
 ![save_load](https://github.com/saborido/Charset-Explorer/assets/11407070/70f1a0ee-0f64-49ab-a809-1872e0744890)
 
+![charsxp_test (28-3-2022)](https://github.com/saborido/Charset-Explorer/assets/11407070/09b12b79-d10f-4629-b2e8-7321127c1f85)
+
+
 -----------------------------
 
 This repository is in under construction (is my first repository ever, i'm trying to learn how this works...)
