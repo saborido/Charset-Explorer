@@ -299,7 +299,8 @@ Differences between  48k and 128k models:
 ----------------------------------------
 
  The program tries to detect the spectrum model, and what mode it is currently in (mode 128 or 48). The program also
- detects if there are any connected disk drives. In the 128k models it's possible to use the RAM disk. If it fails to detect the model, it will treat it as a Spectrum 128k (the Russian clones for example).
+ detects if there are any connected disk drives. In the 128k models it's possible to use the RAM disk. If it fails to
+ detect the model, it will treat it as a Spectrum 128k (the Russian clones for example).
 
  Depending on what it detects, it goes into a mode of four different ones:
 
@@ -341,7 +342,8 @@ About MicroHobby CharSets:
 
  The charset selection routine begins at memory address 63039, and ends at 63063 (inclusive), and is only 25 bytes long.
 
- If you use these character sets, I recommend that you call the ROM set routine when exiting the program that uses them, especially in 128k Basic mode, or you will see garbage (or straight blanks) instead of the program listing. At runtime,
+ If you use these character sets, I recommend that you call the ROM set routine when exiting the program that uses them,
+ especially in 128k Basic mode, or you will see garbage (or straight blanks) instead of the program listing. At runtime,
  the charsets will look fine, in 48k mode this does not occur. It's all ok, neither the listing of your program has been
  corrupted or anything, it's just the way that the Spectrum works.
 
