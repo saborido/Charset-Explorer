@@ -3,7 +3,7 @@
 ![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
 
 
-  ![rainbow](https://github.com/saborido/Charset-Explorer/assets/11407070/9adddd2f-3cc7-4851-ab0d-a1b14bb29b55)  A character/sprites editor for ZX Spectrum
+  ![rainbow](https://github.com/saborido/Charset-Explorer/assets/11407070/9adddd2f-3cc7-4851-ab0d-a1b14bb29b55)  # A character/sprites editor for ZX Spectrum
 
 -----------------------------
 
