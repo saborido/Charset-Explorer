@@ -2,12 +2,11 @@
 
 ## A character/sprites editor for ZX Spectrum
 
-------------------------
+For create multiple charsets and change it with a RANDOMIZE, [Use this tool](https://github.com/saborido/MHC-Routine-Generator) from other of my projects.
 
 ### This repository is in under construction, sorry for the mess... #### (this is my first repository ever, i'm trying to learn how this works...)
 
-
-For create multiple charsets and change it with a RANDOMIZE, [Use this tool](https://github.com/saborido/MHC-Routine-Generator) from other of my projects.
+------------------------
 
 ![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
 
