@@ -4,7 +4,8 @@
 
 For create multiple charsets and change it with a RANDOMIZE, [Use this tool](https://github.com/saborido/MHC-Routine-Generator) from other of my projects.
 
-### This repository is in under construction, sorry for the mess... #### (this is my first repository ever, i'm trying to learn how this works...)
+### This repository is in under construction, sorry for the mess...
+#### (this is my first repository ever, i'm trying to learn how this works...)
 
 ------------------------
 
