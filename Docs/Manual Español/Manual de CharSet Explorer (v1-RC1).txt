@@ -1,0 +1,557 @@
+----------------------------------------------------------------------------------------------------------------------------
+-- Character Explorer v1 RC1 (4-marzo-2024) --										  --
+----------------------------------------------------------------------------------------------------------------------------
+
+							Índice:
+
+	1. Una no tan pequeña introducción:
+
+			1-1. Abreviaciones de palabras.
+
+			1-2. User Interface.
+
+			1-3. Modo Visor.
+
+			1-4. Modo Edición.
+
+			1-5. Barra de Área.
+
+			1-6. Info. sobre el Byte.
+
+			1-7. Barra de UDG.
+
+	2. La lista de teclas:
+
+			2-1. En el Modo Visor.
+
+			2-2. En el Modo Edición.
+
+			2-3. En el menú "Useful Locations".
+
+			2-4. En la pantalla de MicroHobby Charsets.
+
+			2-5. En los menús de Save y Load.
+
+	3. Guardar y cargar datos, juegos de caracteres o de UDG manualmente.
+
+	4. Diferencias entre modelos, 48k y 128k.
+
+	5. Sobre los CharSets de MicroHobby.
+
+	6. ChangeLog.
+
+	7. Bugs conocidos.
+
+	8. Notas finales y agradecimientos.
+
+
+					1. Una no tan pequeña introducción:
+					-----------------------------------
+
+1-1. Abreviaciones de palabros:
+-------------------------------
+
+	CShift ->	 Tecla 'Caps Shift' del Spectrum.
+	SShift ->	 Tecla 'Symbol Shift' del Spectrum.
+	Char (o chars)-> Carácter/es (de los que se escriben, no que si es 'templao' o no).
+	Charset ->	 Set de caracteres.
+
+
+1-2. User interface (imágenes 1 y 2):
+-------------------------------------
+
+ Usa estas imágenes para familiarizarte con la interfaz y sus diversos apartados y nombres.
+
+
+1-3. Qué es el Modo Visor (View Mode):
+--------------------------------------
+
+ Es el modo en el que empieza el programa, que sirve para -como su nombre bien indica- ver partes de la memoria,
+ aunque se pueden hacer modificaciones básicas como rotar, invertir, mirroring y más.
+
+ En este modo te puedes desplazar por la totalidad de la memoria del Spectrum.
+
+
+1-4. Qué es el Modo Edición (Edit Mode):
+----------------------------------------
+
+ A este modo se entra pulsando la tecla 'E' o la tecla 'Enter' desde el Modo Visor, y te permite modificar
+ el char desde la rejilla directamente, como si fuese un editor de sprites. Sabrás que estás en Modo Edición
+ porque el borde de la pantalla cambiará a color Cyan. Ni que decir que este modo es la salsa de este programa,
+ si no se llamaría Explorador de Caracteres... un momento, ¡ups!
+
+ En este modo puedes hacer uso de la Barra de Sprites (CShift + S), que muestra agrupaciones de 2x2 chars para
+ facilitar hacer sprites de 16x16 píxeles, y el modo Seamless Background (CShift + B), que te muestra una cuadrícula
+ de 9x9 con el carácter que estés editando, para facilitarte hacer fondos que se repitan indefinidamente.
+
+ En este modo NO te puedes desplazar por toda la memoria, puesto que hay partes de ésta protegidas para que no
+ se cause un crasheo del sistema por error. Nótese que si se está en el Modo Visor estando en una parte protegida
+ de la memoria, no se podrá entrar al Modo Edición hasta que no se seleccione otra parte de la memoria que no
+ esté protegida.
+
+
+1-5. Barra de Área (imagen 3):
+------------------------------
+
+ Las partes protegidas aparecen con un candado al final de la Barra de Área (la barra de color que aparece en la
+ parte superior). Ver imágenes 1 y 2 para mayor aclaración.
+
+ También el color de la Barra de Área indica si esa parte de la memoria está protegida o no:
+
+	-Azul oscuro:	 Esta parte pertenece a la ROM, y NO se puede modificar.
+	-Rojo:		 Esta área pertenece al BASIC, el programa mismo y otras cosas, y NO se puede modificar.
+	-Magenta:	 Esta área pertenece a los UDG (Gráficos Definidos por el Usuario) y SÍ se puede modificar.
+	-Verde:		 Esta área no está protegida y SÍ se puede modificar. Es la parte que deberías usar.
+	-Cyan:		 Esta área pertenece al CharSet de la ROM y evidentemente, NO se puede modificar.
+	-Amarillo:	 Pertenece a las Variables del Sistema, buffer de la impresora (en 48k), etc. y SÍ se puede
+			 modificar, pero todavía estoy pensando que a lo mejor no es muy buena idea permitirlo...
+	-Blanco:	 Pertenece a la memoria de video de la pantalla, y NO se puede modificar.
+
+ En resumen, sólo se permiten modificar las áreas que están en VERDE, MAGENTA y AMARILLO.
+
+ Estas restricciones también se aplican a las modificaciones que se pueden realizar en el Modo Visor (invertir, rotar,
+ etc). O al menos deberían, cualquier bug pos ya sabéis, me haréis una persona muy feliz si me lo comunicáis. ;)
+
+
+1-6. Leyenda de lo mostrado en la Info. sobre el Byte (imagen 4):
+-----------------------------------------------------------------
+
+ >Este apartado de la interfaz te proporciona información sobre el valor del byte de cada una de las ocho direcciones
+ de memoria de la rejilla.
+
+  Te dice -si es un código ASCII- el carácter que representa, o si es un tóken, o si es un código de control especial
+ usado por el Spectrum para controlar ciertas cosas.
+
+ El color del char que aparece en el apartado de Info. sobre el Byte (a la izquierda de las direcciones de memoria
+ de la rejilla), te da información sobre el valor del byte de cada dirección de memoria. Te dice que char representa,
+ si es un tóken, un UDG, etc.
+
+	>Azul oscuro:	 Aparece un punto. El valor del byte es menor de 32 y no representa ningún char del ASCII.
+			 Son códigos de control que usa el Spectrum (cursores, teclas intro y borrar, colores, etc).
+
+	>Verde:		 El valor del byte está entre 32 y 143, y te dice que char del código ASCII representa.
+
+	>Magenta:	 El valor del byte está entre 144 hasta 162 -en 128k-, y hasta 164 -en 48k-, y representa los
+			 UDG. No aparece el gráfico que tengas definido, sólo la letra que lo representa.
+
+	>Amarillo:	 Aparece una 'T'. El valor del byte está entre 162 -en 128k-, o 164 -en 48k- hasta 255,
+			 informando que representa un tóken del Spectrum (un comando del BASIC, en pocas palabras).
+
+
+1-7. Barra de UDG (imagen 5):
+-----------------------------
+
+ >Esta barra de caracteres aparece cuando estás en la parte de la memoria donde residen los UDG (a partir de 65368).
+
+ Cuando entras a la parte de la memoria que contienen los Gráficos Definidos por el Usuario (UDG), aparece esta barra
+ para que tengas a golpe de vista todos los UDG.
+
+
+				2. Ahora a lo que nos interesa, la lista de teclas:
+				---------------------------------------------------
+
+2-1. En el Modo Visor:
+----------------------
+
+					-Desplazamiento DE la rejilla:
+
+	>O:		-1 Char (-8 bytes). 			>P:		+1 Char (+8 bytes). 
+	>CShift + O:	-4 Chars (-32 bytes). 			>CShift + P:	+4 Chars (+32 bytes).
+	>Q:		-4 Bytes.				>A:		+4 Bytes.
+	>CShift + W:	-1 Byte.				>CShift + S:	+1 Byte.
+	>I:		-8 Chars (-64 bytes).			>K:		+8 Chars (+64 bytes).
+	>CShift + I:	-1 CharSet (-96 chars, -768 bytes.)	>CShift + K:	+1 CharSet (+96 chars, +768 bytes).
+
+	>W: Mueve la barra de selección amarilla arriba.	>S: Mueve la barra de selección amarilla abajo.
+
+
+					-General (Modo Visor)
+
+	>B:		 Modo Binario.
+	>H:		 Cambia de decimal a hexadecimal y viceversa.
+	>E, Enter:	 Entra al Modo Edición con el cursor en la columna 4.
+	>R:		 Refresca la rejilla y las barras de posición y de UDG.
+	>Cshift + R:	 Recarga el programa.
+	>L:		 Entra en el menú 'Useful Locations'.
+	>CShift + Q:	 Sale al BASIC (haz un RUN para volver al programa).
+	>CShift + H:	 Cambia el color del borde a negro (por si no te gusta el azul).
+	>CShift + B:	 Pantalla de presentación y selección de CharSets de MicroHobby.
+	>D:		 Cambiar a dirección de memoria (Input).
+
+	>G:		 Cambia el color de fondo de la rejilla.
+	>CShift + G:	 Cambia el color de los puntos de fondo (píxeles inactivos) de la rejilla.
+	>SShift + K:	 Cambia el color de la tinta (píxeles activos) de la rejilla.
+
+	>CShift + A:	 Entra al menú de Save.
+	>CShift + L:	 Entra al menú de Load.
+
+	>M:	     Marca de selección de dirección inicial de memoria para copiar, mover, borrar o guardar (Save/Load).
+	>CShift + M: Marca de selección de dirección final de memoria para copiar, mover, borrar o guardar (Save).
+	>SShift + M (el punto), limpia las marcas de selección/guardado que hayas puesto.
+
+
+					-General (otras teclas):
+
+	>SShift + Z:	 Borra los datos entre las marcas de selección/guardado.
+	>SShift + X:	 Mueve los datos de las marcas de selección/guardado a la direccion actual.
+	>SShift + V:	 Copia los datos de las marcas de selección/guardado a la direccion actual.
+
+	>Números del 1 al 8, para entrar al Modo Edición con el cursor en la columna del número pulsado.
+
+
+					-Algo de edición:
+
+	>V:	 Cambiar el valor de la dirección de memoria seleccionada en amarillo (Input).
+	>CShift + D: Borra el char actual.		>CShift + Z:	 Borra la fila (byte) seleccionado.
+	>F:	 Voltear el char verticalmente.		>CShift + F:	 Voltear el char horizontalmente.
+	>T:	 Rotar en sentido horario.		>CShift + T:	 Rotar en sentido antihorario.
+	>N:	 Invertir el char
+
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair):	 'Acomodar' el char (desplazarlo por la rejilla).
+	>N, SShift + 0 (Disparo en Joystick Sinclair):	 Invierte el char (un negativo, lo que es 0 ponerlo a 1 y
+							 viceversa).
+
+					-Portapapeles:
+
+	>C: Copia el valor (byte) de la selección.	>CShift + C: Copia el char (8 bytes) actual.
+	>CShift + V:	 Pega el valor (byte) o el char (8 bytes) en la posición actual.
+	>CShift + X:	 Borra el portapapeles.
+
+
+2-2. En el Modo Edición:
+------------------------
+
+					-Desplazamiento POR la rejilla:
+
+	>W, A, S, D:	 Mover cursor (Arriba, Izquierda, Abajo y Derecha).
+	>O, P:		 Mover cursor (Izquierda, Derecha).
+	>Q, E, Z, C:	 Mover cursor en diagonales (Arriba Izquierda, Arriba Derecha, Abajo Izquierda y Abajo Derecha).
+
+	>CShift + O, P:  Guarda el char en memoria y se desplaza al char anterior/posterior.
+
+
+					-Escritura de píxeles:
+
+	>X:	 Activa la escritura. Se desactiva al volver a pulsar la tecla 'X' o la barra espaciadora.
+	>CShift + 0, Delete: Activa el borrador. Se desactiva pulsando '0', 'CShift + 0' o la barra espaciadora.
+	>N:	 Activa el píxel en la posición del cursor (incluso con la escritura/borrador activo).
+	>M:	 Desactiva el píxel en la posición del cursor (incluso con la escritura/borrador activo).
+	>Barra Espaciadora: Activa/desactiva el píxel en la posición del cursor.
+
+
+					-Modificaciones:
+
+	>CShift + D: Borra el char actual.
+	>CShift + Z: Borra la fila (byte) seleccionado en amarillo.
+	>F:	 Voltear el char verticalmente.		>CShift + F:	 Voltear el char horizontalmente.
+	>T:	 Rotar en sentido horario.		>CShift + T:	 Rotar en sentido antihorario.
+
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair):	 'Acomodar' el char (desplazarlo por la rejilla).
+	>I, SShift + 0 (Disparo en Joystick Sinclair):	 Invierte el char (lo mismo que la tecla 'N' en el Modo Visor).
+
+
+					-General (Modo Edición):
+
+	>B:		 Modo Binario.
+	>CShift + S:	 Activa/desactiva modo Sprites.
+	>1, 2 y 3:	 Offset del modo sprites (-1, +1 y reset a 0).
+	>CShift + B:	 Activa/desactiva el modo Seamless, para facilitar dibujar backgrounds con repeticiones sin
+			 costuras, por ejemplo.
+	>CShift + E:	 NO guarda el char en memoria, restaura el original y vuelve al Modo Visor.
+	>Enter:		 Guarda el char en memoria y vuelve al Modo Visor.
+	>CShift + Q:	 Se guarda el char modificado en memoria y sale al Basic (haz un RUN para volver al programa).
+
+	>R:		 Actualiza la barra de Posición, la de UDG y la de Sprites.
+	>CShift + R:	 Recarga el char y lo demás (la rejilla y las barras de Posición, UDG y Sprites).
+
+
+2-3. En el menú de selección 'Useful Locations' (imagen 6):
+-----------------------------------------------------------
+
+ >En este menú (tecla 'L' en Modo Visor) puedes saltar rápido a direcciones de memoria predefinidas.
+
+	>U:	 UDG (65368 en 48k y 128k).		-CShift + U:	 Final de UDG (65512 en 128k, 65528 en 48k).
+	>R:	 ROM CharSet (15616).			-CShift + R:	 Final de ROM CharSet (16376).
+	>A:	 MicroHobby CharSet 1 (63064).		-CShift + A:	 Final de MicroHobby CharSet 1 (63824).
+	>B:	 MicroHobby CharSet 2 (63832).		-CShift + B:	 Final de MicroHobby CharSet 2 (64592).
+	>C:	 MicroHobby CharSet 3 (64600).		-CShift + C:	 Final de MicroHobby CharSet 3 (65360).
+	>CShift + Q: Sale al Basic (haz un RUN para volver al programa).
+
+
+					-Más teclas de 'Useful Locations':
+
+	>1: Primer tercio de la pantalla (16384).
+	>2: Segundo tercio de la pantalla (18432).
+	>3: Tercer tercio de la pantalla (20480).
+	>4: Atributos de color de la pantalla (22528).
+	>5: Variables del sistema en 128k, buffer de la impresora en 48k (23296). Las variables del sistema
+	    en 48k empiezan en 23552.
+	>6: Comienzo de este programa (25200).
+	>7: Memoria de usuario libre (56000).
+	>8: Rutinas, datos y variables del programa (62968).
+	>9: Rutina MH charset (63040).
+	>0: Principio de la ROM (00000).
+
+
+2-4. En la pantalla de CharSets de MicroHobby (imagen 7):
+---------------------------------------------------------
+
+ >En esta pantalla (teclas 'CShift + B' en Modo Visor) puedes cambiar la fuente de texto del programa por una de las tres
+ que hay en el espacio de memoria dedicado a los Charsets de MicroHobby. Así puedes probarlos a ver que tal quedan.
+
+  Si tienes charsets en otra parte de la memoria y quieres probarlos, copia el charset a una de estas tres direcciones.
+ Son las que corresponden a las teclas A, B y C en el menú de 'Useful Locations' (CShift + L).
+
+-Ve a la página 12 para obtener más información sobre los Charsets de MicroHobby, y la parte de la memoria donde se alojan -
+
+						Imagen 7 – MicroHobby CharSets.
+
+	>1: Selecciona el CharSet 1 y cambia la fuente del programa (para probar un nuevo charset, por ejemplo).
+	>2: Selecciona el CharSet 2 y lo mismo de arriba.
+	>3: Selecciona el CharSet 3 y...
+
+	>Cualquier otra tecla cambia a la fuente por defecto (ROM) y vuelve al Modo Visor.
+
+
+2-5. En los menús de Save y Load (imagen 8):
+--------------------------------------------
+
+ >Aquí puedes guardar/cargar tus Charsets, UDG, Sprites, etc.
+
+  Puedes guardar en cinta en todos los modelos de Spectrum, además de en RAM en los modelos de 128k y también en disco
+ en el +3. También puedes guardar manualmente, saliendo al BASIC con Cshift + Q.
+
+  Te recomiendo salir al BASIC antes y poner el modo PANTALLA (SCREEN) en un modelo de 128k, para que no se borre la
+ pantalla superior al guardar/cargar manualmente, y tener los datos a la vista.
+
+	>1: Guardar/Cargar UDG's.
+	>2: Guardar/Cargar CharSets de MicroHobby (los tres, 288 chars --2304 bytes sin rutina, --2329 bytes con rutina).
+	>R: Seleccionar guardar/cargar con o sin rutina.
+
+	>3: Guardar/Cargar CharSet de MicroHobby (sólo un charset, 96 chars --768 bytes).
+	>M: Seleccionar área para guardar/cargar CharSet (o con las teclas A, B ó C).
+
+	>4: Guardar/Cargar desde/hacia marca/s de selección/guardado.
+	>5: Guardar/Cargar desde/hacia dirección custom. Ha de ser de 56000 ($DAC0) en adelante.
+	>6: Guardar programa completo/Cargar desde file header.
+
+	>T: Guardar/Cargar en Tape (cinta), Disk (disco) o RAM.
+
+	>Con cualquier otra tecla vuelves al Modo Visor.
+
+ Ten cuidado al cargar, porque puedes cargar datos encima del programa y hacer que crashee. Si al guardar/cargar te da
+ algún fallo o haces un break, vuelve a ejecutar el programa con un simple RUN.
+
+ Si necesitas grabar o cargar desde una unidad diferente (si tienes un divIDE, o la unidad C del Spectrum Next) debes
+ hacerlo de forma manual saliendo al Basic (CShift + Q).
+
+ Si piensas cargar charsets de la página de ZX Origins (https://damieng.com/typography/zx-origins) te recomiendo que los
+ cargues en una de las tres áreas de los charsets de MicroHobby (la opción/tecla 3).
+
+
+			3. Guardar y cargar datos, juegos de caracteres o de UDG manualmente:
+			---------------------------------------------------------------------
+
+ Para grabar o cargar datos manualmente hay que salir al BASIC con las teclas CShift + Q (mejor te apuntas en un
+ papelico la dirección de memoria y la longitud de los datos a grabar/cargar, o haces lo de salir al BASIC y
+ seleccionar el modo PANTALLA en un modelo de 128k).
+
+ Para cargar datos, no hagas ningún CLEAR xxxxx. Si lo haces, posiblemente te cargues parte del código del
+ programa y no puedas volver a él sin que casque. Ya hay un CLEAR 25199 en el cargador, que es donde empieza el programa.
+ Desde donde acaba el programa (cerca de 56000) hasta 65535, es memoria libre que se puede usar (con excepción de una
+ parte intermedia que usa el programa para unos pocos datos).
+
+ Mira muy bien dónde cargas las cosas para no pisar el código del programa. Recuerda que luego en tu programa/juego,
+ puedes cargar estos datos en una posición de memoria que te resulte más cómoda sin problema alguno.
+
+ Puedes usar el mismo programa para ver que partes hay libres y así cargar datos sin miedo a machacar nada. En el
+ Modo Visor, usa CShift + I/K para moverte rápidamente con saltos de 768 bytes, y sin el CShift pulsado para saltos
+ de 64 bytes.
+
+
+					4. Diferencias entre modelos, 48k y 128k:
+					-----------------------------------------
+
+ El programa intenta detectar el modelo de Spectrum, y en qué modo se está actualmente (modo 128 ó 48). El programa
+ también detecta si estás en un +3 y usará la unidad de disco. En los modelos de 128k es posible usar el disco RAM.
+ Si no consigue detectar el modelo, lo tratará como un Spectrum 128k (los clones rusos, por ejemplo).
+
+ Según lo que detecte, se pone en un modo de 4 diferentes (en todos los modos se puede usar la cinta):
+
+	-Modo 0: Estás en un modelo de 48k, o en un modelo de 128k en modo 48 (USR 0), y sólo se puede usar el Tape
+		 (la cinta).
+	-Modo 1: Estás en un 128/+2 en modo 128, o en un clon no detectado (se puede usar el disco RAM).
+	-Modo 2: Estás en un +2A/B en modo 128 (se puede usar el disco RAM).
+	-Modo 3: Estás en +3 o en un +2A/B con unidad de disco conectada (se puede usar el disco RAM o la unidad de disco).
+
+ ¿En qué se diferencian estos modos? pues prácticamente sólo en la disposición del dispositivo de almacenamiento, pero
+ también cambian ciertas cosicas puntuales que expongo a continuación:
+
+ En el menú de 'Useful Locations', al pulsar la tecla 'CShift + U' para ir al final de los UDG, en 128k llega hasta el
+ UDG S, y en el modo de 48k llega hasta el UDG U (anque se pueden editar la T y la U tanto en 48k como en 128k). En la
+ Barra de Área, en 48k aparece el buffer de la impresora, en 128k no.
+
+
+					5. Sobre los CharSets de MicroHobby:
+					------------------------------------
+
+ El programa viene con tres sets de caracteres. Son los que venían en la revista MicroHobby número 30, páginas 14, 15
+ y 16, en un apartado llamado 'Personaliza tu Spectrum', pero el tercero de ellos está cambiado por un set hecho por mi,
+ y los otros dos con muy ligeros cambios en algún char. Los puedes usar, modificar a tu gusto o crear unos nuevos.
+
+ Aparte de los tres sets, en la revista venía una pequeña rutina en ensamblador para cambiar a cualquier set de los
+ tres con un RANDOMIZE USR, que cambia la Variable del sistema CHARS. Esta rutina la he incluido.
+
+ En el programa, en el Modo Visor, puedes pulsar 'CShift + B' para ver los tres sets al completo, incluso seleccionar
+ alguno que cambiará la fuente de texto del programa para ver como quedaría. En este menú de selección de charset puedes
+ ver al lado de cada set un texto que dice 'USR xxxxx', donde 'xxxxx' es la dirección de memoria donde has de hacer el
+ RANDOMIZE USR para cambiar a ese charset. Te lo pongo aqui también:
+
+	>RANDOMIZE USR 63044 para el primer set.
+	>RANDOMIZE USR 63049 para el segundo set.
+	>RANDOMIZE USR 63054 para el tercer set.
+	>RANDOMIZE USR 63039 para volver al set de caracteres de la ROM.
+
+ La rutina de selección de charset empieza en la dirección de memoria 63039, y acaba en la 63063 (inclusive), y ocupa
+ tan sólo 25 bytes. Hay un programa que adjunto que crea la rutina para hasta 32 charsets.
+
+ Si usas estos sets de caracteres, te recomiendo que llames a la rutina del set de la ROM al salir del programa que las
+ use, sobretodo en el modo 128k del BASIC, o veras basura (o directamente espacios en blanco) en vez del listado del
+ programa. En tiempo de ejecución y en modo se verán bien los caracteres. No pasa nada, ni el listado de tu programa
+ se ha corrompido ni nada, es sólo la manera que tienen de funcionar los Spectrum de 128k.
+
+ El primer charset va desde la dirección 63064 (un charset completo son 768 bytes) hasta 63831, el segundo desde 63832
+ hasta 64599, y el tercero desde 64600 hasta 65367 (justo hasta donde empiezan los UDG, que es 65368). Ten en cuenta
+ esto si sólo quieres guardar los charsets (o solo alguno) sin la rutina de ensamblador antes dicha.
+
+ Si quieres más información sobre los charsets de MicroHobby, visita el siguiente enlace:
+
+ https://microhobby.speccy.cz/mhforever/numero030.htm
+
+ Busca el apartado 'Personaliza tu Spectrum' (páginas 14, 15 y 16). Tienes incluso el código fuente de la rutina de
+ ensamblador, que es muy sencilla, y la puedes modificar para añadir mas charsets, o para poder ubicar la rutina en
+ otra dirección de memoria si te es necesario. Si es el caso, acuérdate de que la Variable del sistema CHARS apunta a
+ la dirección de memoria del juego de caracteres MENOS 256. O sea, que le has de decir a la variable CHARS que tienes
+ el charset 256 bytes menos que la posición donde realmente está el charset en memoria.
+
+
+						6. ChangeLog
+						------------
+
+v1 RC1 (25-1-2024):
+-------------------
+
+-Arreglado un bug gooordo que impedía cargar/guardar.
+
+-Se han cambiado algunas teclas.
+
+-Se ha añadido un offset para el modo Sprites del Modo Edición. Lo puedes subir y bajar con las teclas '1' y
+ '2', y resetearlo con el '3'.
+
+-Ahora en el Modo Edición, se puede mover el cursor sin límites (sales por un lado y entras por el contrario).
+
+-Arreglados varios bugs visuales.
+
+-Arreglados varios bugs menores.
+
+
+v0.96 Berta2 (23-5-2022):
+-------------------------
+
+-Se ha eliminado la ayuda del programa base para liberar memoria para el usuario. La ayuda ahora se puede cargar
+ aparte, en otra instancia del emulador, por ejemplo. También se le ha añadido un menú al estilo 128 a la ayuda.
+
+ Ahora la tecla CShift + H cambia el color del borde de la pantalla a negro (por si no te gusta el azul predeterminado).
+
+-Se ha movido el programa a otra posición de memoria. Antes empezaba alrededor de 32637, ahora empieza en
+ 25200, donde antes empezaba la ayuda. Ésto se ha hecho para que la memoria libre quede más o menos de manera
+ secuencial, aunque es verdad que en medio se quedan ciertas variables y datos del programa, y la rutina de
+ selección de charsets de MicroHobby.
+
+-Se han modificado las teclas para desplazar el char por la rejilla para que coincidan con el Joystick Sinclair 1.
+ También se ha añadido soporte Joystick Sinclair 1 al Modo Edición para mover el cursor.
+
+
+v0.96 Berta1 (30-4-2022):
+-------------------------
+
+Primera Beta de Character Explorer.
+
+
+						7. Bugs conocidos
+						-----------------
+
+Bugs esteticos:
+---------------
+
+-Me ha pasado en un +2A/B en modo 128k, que al entrar al menú de Save/Load (concretamente en el de Save) no me ha
+ aparecido seleccionado ni Tape ni RAM (por defecto es Tape). Recuerdo haber probado la tecla que lo cambia (la T) varias
+ veces, y al salir y volver a entrar no aparecía ninguna de las dos opciones seleccionada (si le vuelves a dar a la T
+ digamos que 'vuelve al sitio' y ya funciona correctamente). Sólo me ha pasado una vez y no lo he podido volver a
+ reproducir.
+
+
+Bugs menores:
+-------------
+
+-En el Modo Edición, al traspasar la zona roja protegida de la rutina MH y las variables del programa, te resetea a
+ multiplo de 8 la rejilla.
+
+
+Bugs 'normales':
+----------------
+
+-Si has movido la rejilla un número que no sea múltiplo de 8, puede que puedas editar una parte de la memoria que
+ debiera de estar protegida de escritura.
+
+-En el Modo Edición, al desplazarse con CShift + O y + P, a veces se invierte el carácter (normalmente lo he visto con la
+ tecla CShift + P). Me pasó varias veces pero no lo conseguí reproducir, pero después de seguir con el código ya no me
+ ha vuelto a pasar. -- CORREGÍ ALGO QUE PUEDE QUE FUESE LA CAUSA, POR FAVOR AVISAD SI OS PASA --
+
+
+Killer Bugs (que petan el programa):
+------------------------------------
+
+-Al poner la marca de finalizar en 65535 y borras con SShift + Z (o mueves con SShift + X), el programa peta (al menos en
+ el compilado). I don't know why...
+
+-AL cargar desde ciertos punteros (posición actual, marca, etc) puedes machacar código propio del programa y hacer que
+ éste crashee. Sé cuidadoso cuando cargues. -- NO CREO QUE LO PARCHEE, VOY ESCASO DE MEMORIA Y NO CREO QUE ME ACUERDE
+ DE HACERLO... --
+
+
+					8. Notas finales y agradecimientos:
+					-----------------------------------
+
+ En la página de ZX Origins (https://damieng.com/typography/zx-origins) tienes a tu disposición cienes y cienes de charsets
+ completos para descargar. Es oro la web esta. Muchas gracias a DamienG por la creación de la misma.
+
+ Si alguien sabe algún POKE o RANDOMIZE USR o algo para cambiar al modo Screen del basic de 128k (la pantalla inferior),
+ que por favor me diga cómo. Estaría de lujo que al salir del programa aparezca en este modo, para que así no se borre la
+ pantalla superior y puedas tener, por ejemplo, la dirección a grabar a la vista.
+
+ Muchísimas gracias a vicentecno por su rutina de asm para averiguar múltiplos de 32, me ha sido muy útil para la barra de
+ Sprites. Muchas gracias a Sergio thEpOpE por la sugerencia del seamless background y -sobre todo- por sus videos (me han
+ ayudado mucho). Muchas gracias también a Rodolfo Guerra por descubrirme el compilador de HiSoft.
+
+ Y muchas gracias sobretodo a vicentecno, Paco Vespa, Azimov, y en general a toda la gente del discord de Arnau Jess por
+ aguantarme (Isaías, Jimmy), y en especial a la gente del canal #desarrollo del mismo servidor. Muchísimas gracias a
+ todos...
+
+		- Hecho en Sinclair BASIC y compilado con HiSoft BASIC Compiler (versión de 128k) -
+
+
+
+							Fin
+							---
+
+
+
+
+PD: Vale, puede que se me haya ido un poco de las manos tanta tecla. Lo siento mucho, no volverá a ocurrir (sonando con
+    voz monárquica)...
+
+
+----------------------------------------------------------------------------------------------------------------------------
+-- CharsExp v1 RC1 (27-julio-2024) --						-- Por Saúl Saborido ('sulas' en discord) --
+----------------------------------------------------------------------------------------------------------------------------

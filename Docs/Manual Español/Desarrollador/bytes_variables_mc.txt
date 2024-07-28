@@ -1,0 +1,4 @@
+M/C: 30096 bytes.
+    +25200 = 55296
+    +  497 = 55793
+497 bytes de M/C variables.
