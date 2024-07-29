@@ -1,5 +1,10 @@
-v1 RC1 (1-25-2024):
--------------------
+
+					- CharSet Explorer v1.0 RC1 Change Log -
+
+v1.0 RC1 (7-29-2024):
+---------------------
+
+-Updated the english manual and help.
 
 -Fixed a major bug that prevented loading/saving.
 

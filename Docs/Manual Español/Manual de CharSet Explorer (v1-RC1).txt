@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------
--- Character Explorer v1 RC1 (4-marzo-2024) --										  --
+-- Character Explorer v1.0 RC1 (27-julio-2024) --									  --
 ----------------------------------------------------------------------------------------------------------------------------
 
 							Índice:
@@ -38,11 +38,7 @@
 
 	5. Sobre los CharSets de MicroHobby.
 
-	6. ChangeLog.
-
-	7. Bugs conocidos.
-
-	8. Notas finales y agradecimientos.
+	6. Notas finales y agradecimientos.
 
 
 					1. Una no tan pequeña introducción:
@@ -53,14 +49,15 @@
 
 	CShift ->	 Tecla 'Caps Shift' del Spectrum.
 	SShift ->	 Tecla 'Symbol Shift' del Spectrum.
-	Char (o chars)-> Carácter/es (de los que se escriben, no que si es 'templao' o no).
+	Char (o chars)-> Caracter/es (de los que se escriben, no que si es 'templao' o no).
 	Charset ->	 Set de caracteres.
 
 
-1-2. User interface (imágenes 1 y 2):
--------------------------------------
+1-2. User interface:
+--------------------
 
- Usa estas imágenes para familiarizarte con la interfaz y sus diversos apartados y nombres.
+ Ver imágenes 1 y 2 en la carpeta 'Docs\Manual Español\Imágenes'. Usa estas imágenes para familiarizarte con la interfaz
+ y sus diversos apartados y nombres.
 
 
 1-3. Qué es el Modo Visor (View Mode):
@@ -82,7 +79,7 @@
 
  En este modo puedes hacer uso de la Barra de Sprites (CShift + S), que muestra agrupaciones de 2x2 chars para
  facilitar hacer sprites de 16x16 píxeles, y el modo Seamless Background (CShift + B), que te muestra una cuadrícula
- de 9x9 con el carácter que estés editando, para facilitarte hacer fondos que se repitan indefinidamente.
+ de 9x9 con el caracter que estés editando, para facilitarte hacer fondos que se repitan indefinidamente.
 
  En este modo NO te puedes desplazar por toda la memoria, puesto que hay partes de ésta protegidas para que no
  se cause un crasheo del sistema por error. Nótese que si se está en el Modo Visor estando en una parte protegida
@@ -119,7 +116,7 @@
  >Este apartado de la interfaz te proporciona información sobre el valor del byte de cada una de las ocho direcciones
  de memoria de la rejilla.
 
-  Te dice -si es un código ASCII- el carácter que representa, o si es un tóken, o si es un código de control especial
+  Te dice -si es un código ASCII- el caracter que representa, o si es un tóken, o si es un código de control especial
  usado por el Spectrum para controlar ciertas cosas.
 
  El color del char que aparece en el apartado de Info. sobre el Byte (a la izquierda de las direcciones de memoria
@@ -171,7 +168,7 @@
 	>H:		 Cambia de decimal a hexadecimal y viceversa.
 	>E, Enter:	 Entra al Modo Edición con el cursor en la columna 4.
 	>R:		 Refresca la rejilla y las barras de posición y de UDG.
-	>Cshift + R:	 Recarga el programa.
+	>CShift + R:	 Recarga el programa.
 	>L:		 Entra en el menú 'Useful Locations'.
 	>CShift + Q:	 Sale al BASIC (haz un RUN para volver al programa).
 	>CShift + H:	 Cambia el color del borde a negro (por si no te gusta el azul).
@@ -205,11 +202,11 @@
 	>CShift + D: Borra el char actual.		>CShift + Z:	 Borra la fila (byte) seleccionado.
 	>F:	 Voltear el char verticalmente.		>CShift + F:	 Voltear el char horizontalmente.
 	>T:	 Rotar en sentido horario.		>CShift + T:	 Rotar en sentido antihorario.
-	>N:	 Invertir el char
+	>N:	 Invertir el char.
 
-	>SShift + 6, 7, 8 y 9 (Joystick Sinclair):	 'Acomodar' el char (desplazarlo por la rejilla).
-	>N, SShift + 0 (Disparo en Joystick Sinclair):	 Invierte el char (un negativo, lo que es 0 ponerlo a 1 y
-							 viceversa).
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair): 'Acomodar' el char (desplazarlo por la rejilla).
+	>N, SShift + 0 (Disparo en Joystick Sinclair): Invierte el char (un negativo, lo que es 0 ponerlo a 1 y
+						       viceversa).
 
 					-Portapapeles:
 
@@ -246,8 +243,8 @@
 	>F:	 Voltear el char verticalmente.		>CShift + F:	 Voltear el char horizontalmente.
 	>T:	 Rotar en sentido horario.		>CShift + T:	 Rotar en sentido antihorario.
 
-	>SShift + 6, 7, 8 y 9 (Joystick Sinclair):	 'Acomodar' el char (desplazarlo por la rejilla).
-	>I, SShift + 0 (Disparo en Joystick Sinclair):	 Invierte el char (lo mismo que la tecla 'N' en el Modo Visor).
+	>SShift + 6, 7, 8 y 9 (Joystick Sinclair): 'Acomodar' el char (desplazarlo por la rejilla).
+	>I, SShift + 0 (Disparo en Joystick Sinclair): Invierte el char (lo mismo que la tecla 'N' en el Modo Visor).
 
 
 					-General (Modo Edición):
@@ -275,6 +272,7 @@
 	>A:	 MicroHobby CharSet 1 (63064).		-CShift + A:	 Final de MicroHobby CharSet 1 (63824).
 	>B:	 MicroHobby CharSet 2 (63832).		-CShift + B:	 Final de MicroHobby CharSet 2 (64592).
 	>C:	 MicroHobby CharSet 3 (64600).		-CShift + C:	 Final de MicroHobby CharSet 3 (65360).
+
 	>CShift + Q: Sale al Basic (haz un RUN para volver al programa).
 
 
@@ -289,7 +287,7 @@
 	>6: Comienzo de este programa (25200).
 	>7: Memoria de usuario libre (56000).
 	>8: Rutinas, datos y variables del programa (62968).
-	>9: Rutina MH charset (63040).
+	>9: Rutina MicroHobby CharSet (63040).
 	>0: Principio de la ROM (00000).
 
 
@@ -302,9 +300,7 @@
   Si tienes charsets en otra parte de la memoria y quieres probarlos, copia el charset a una de estas tres direcciones.
  Son las que corresponden a las teclas A, B y C en el menú de 'Useful Locations' (CShift + L).
 
--Ve a la página 12 para obtener más información sobre los Charsets de MicroHobby, y la parte de la memoria donde se alojan -
-
-						Imagen 7 – MicroHobby CharSets.
+-Ve a la sección 5 para obtener más información sobre los Charsets de MicroHobby, y la parte de la memoria donde se alojan-
 
 	>1: Selecciona el CharSet 1 y cambia la fuente del programa (para probar un nuevo charset, por ejemplo).
 	>2: Selecciona el CharSet 2 y lo mismo de arriba.
@@ -319,7 +315,7 @@
  >Aquí puedes guardar/cargar tus Charsets, UDG, Sprites, etc.
 
   Puedes guardar en cinta en todos los modelos de Spectrum, además de en RAM en los modelos de 128k y también en disco
- en el +3. También puedes guardar manualmente, saliendo al BASIC con Cshift + Q.
+ en el +3. También puedes guardar manualmente, saliendo al BASIC con CShift + Q.
 
   Te recomiendo salir al BASIC antes y poner el modo PANTALLA (SCREEN) en un modelo de 128k, para que no se borre la
  pantalla superior al guardar/cargar manualmente, y tener los datos a la vista.
@@ -435,92 +431,7 @@
  el charset 256 bytes menos que la posición donde realmente está el charset en memoria.
 
 
-						6. ChangeLog
-						------------
-
-v1 RC1 (25-1-2024):
--------------------
-
--Arreglado un bug gooordo que impedía cargar/guardar.
-
--Se han cambiado algunas teclas.
-
--Se ha añadido un offset para el modo Sprites del Modo Edición. Lo puedes subir y bajar con las teclas '1' y
- '2', y resetearlo con el '3'.
-
--Ahora en el Modo Edición, se puede mover el cursor sin límites (sales por un lado y entras por el contrario).
-
--Arreglados varios bugs visuales.
-
--Arreglados varios bugs menores.
-
-
-v0.96 Berta2 (23-5-2022):
--------------------------
-
--Se ha eliminado la ayuda del programa base para liberar memoria para el usuario. La ayuda ahora se puede cargar
- aparte, en otra instancia del emulador, por ejemplo. También se le ha añadido un menú al estilo 128 a la ayuda.
-
- Ahora la tecla CShift + H cambia el color del borde de la pantalla a negro (por si no te gusta el azul predeterminado).
-
--Se ha movido el programa a otra posición de memoria. Antes empezaba alrededor de 32637, ahora empieza en
- 25200, donde antes empezaba la ayuda. Ésto se ha hecho para que la memoria libre quede más o menos de manera
- secuencial, aunque es verdad que en medio se quedan ciertas variables y datos del programa, y la rutina de
- selección de charsets de MicroHobby.
-
--Se han modificado las teclas para desplazar el char por la rejilla para que coincidan con el Joystick Sinclair 1.
- También se ha añadido soporte Joystick Sinclair 1 al Modo Edición para mover el cursor.
-
-
-v0.96 Berta1 (30-4-2022):
--------------------------
-
-Primera Beta de Character Explorer.
-
-
-						7. Bugs conocidos
-						-----------------
-
-Bugs esteticos:
----------------
-
--Me ha pasado en un +2A/B en modo 128k, que al entrar al menú de Save/Load (concretamente en el de Save) no me ha
- aparecido seleccionado ni Tape ni RAM (por defecto es Tape). Recuerdo haber probado la tecla que lo cambia (la T) varias
- veces, y al salir y volver a entrar no aparecía ninguna de las dos opciones seleccionada (si le vuelves a dar a la T
- digamos que 'vuelve al sitio' y ya funciona correctamente). Sólo me ha pasado una vez y no lo he podido volver a
- reproducir.
-
-
-Bugs menores:
--------------
-
--En el Modo Edición, al traspasar la zona roja protegida de la rutina MH y las variables del programa, te resetea a
- multiplo de 8 la rejilla.
-
-
-Bugs 'normales':
-----------------
-
--Si has movido la rejilla un número que no sea múltiplo de 8, puede que puedas editar una parte de la memoria que
- debiera de estar protegida de escritura.
-
--En el Modo Edición, al desplazarse con CShift + O y + P, a veces se invierte el carácter (normalmente lo he visto con la
- tecla CShift + P). Me pasó varias veces pero no lo conseguí reproducir, pero después de seguir con el código ya no me
- ha vuelto a pasar. -- CORREGÍ ALGO QUE PUEDE QUE FUESE LA CAUSA, POR FAVOR AVISAD SI OS PASA --
-
-
-Killer Bugs (que petan el programa):
-------------------------------------
-
--Al poner la marca de finalizar en 65535 y borras con SShift + Z (o mueves con SShift + X), el programa peta (al menos en
- el compilado). I don't know why...
-
--AL cargar desde ciertos punteros (posición actual, marca, etc) puedes machacar código propio del programa y hacer que
- éste crashee. Sé cuidadoso cuando cargues. -- NO CREO QUE LO PARCHEE, VOY ESCASO DE MEMORIA Y NO CREO QUE ME ACUERDE
- DE HACERLO... --
-
-
-					8. Notas finales y agradecimientos:
+					6. Notas finales y agradecimientos:
 					-----------------------------------
 
  En la página de ZX Origins (https://damieng.com/typography/zx-origins) tienes a tu disposición cienes y cienes de charsets
@@ -553,5 +464,5 @@ PD: Vale, puede que se me haya ido un poco de las manos tanta tecla. Lo siento m
 
 
 ----------------------------------------------------------------------------------------------------------------------------
--- CharsExp v1 RC1 (27-julio-2024) --						-- Por Saúl Saborido ('sulas' en discord) --
+-- CharsExp v1.0 RC1 (27-julio-2024) --						-- Por Saúl Saborido ('sulas' en discord) --
 ----------------------------------------------------------------------------------------------------------------------------
