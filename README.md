@@ -643,3 +643,5 @@ PS: Okay, so many keys may have gotten a bit out of hand. I am so sorry...
 -- CharsExp v1.0 RC1 (7-27-2024) --					-- By Saúl Saborido (sulas) --
 ------------------------------------------------------------------------------------------------------
 ```
+
+![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
