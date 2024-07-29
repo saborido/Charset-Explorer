@@ -2,7 +2,7 @@
 
 ## A character/sprites editor for ZX Spectrum
 
-For create multiple charsets and change it with a RANDOMIZE, [Use this tool](https://github.com/saborido/MHC-Routine-Generator) from other of my projects.
+For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool](https://github.com/saborido/MHC-Routine-Generator) from other of my projects.
 
 ### This repository is in under construction, sorry for the mess...
 #### (this is my first repository ever, i'm trying to learn how this works...)
@@ -63,7 +63,11 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 
 	5. About MicroHobby CharSets.
 
-	6. Final Notes and Acknowledgments.
+	6. ChangeLog.
+
+	7. Known bugs.
+
+	8. Final Notes and Acknowledgments.
 
 
 					1. A not so little introduction:
@@ -77,12 +81,18 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 	Char (or chars)-> Character/s.
 	CharSet ->	  Character set.
 
+```
+
+					(image 1)
+
+					(image 2)
+
+```
 
 1-2. User interface:
 --------------------
 
- See images 1 and 2 in 'Docs\English manual\Images' folder. Use this images to become familiar with
- the interface and its various sections and names.
+ Use this images to become familiar with the interface and its various sections and names.
 
 
 1-3. What is View Mode:
@@ -112,9 +122,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
  part of memory, you will not be able to enter Edit Mode until another non-protected part of memory
  is selected.
 
+```
 
-1-5. Area bar (image 3):
------------------------
+					(image 3)
+
+```
+
+1-5. Area bar:
+--------------
 
  Protected parts appear with a padlock at the bottom of the Area bar (the coloured bar that appears
  at the top). See images 1 and 2 for further clarification.
@@ -140,9 +155,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
  rotate, etc.). Or at least they should, any bug you know, you will make me a very happy person if
  you let me know. ;)
 
+```
 
-1-6. Legend of what is shown in the Info. about the Byte (image 4):
-------------------------------------------------------------------
+					(image 4)
+
+```
+
+1-6. Legend of what is shown in the Info. about the Byte:
+---------------------------------------------------------
 
  >This section of the interface provides you with information about the byte value of each of the
  eight memory addresses in the grid.
@@ -165,9 +185,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 	>Yellow:	 A 'T' appears. The byte value is between 162 in 128k or 164 in 48k up to 255,
 			 saying that it represents a Spectrum token (a BASIC command, in a nutshell).
 
+```
 
-1-7. UDG bar (image 5):
-----------------------
+					(image 5)
+
+```
+
+1-7. UDG bar:
+-------------
 
  >This character bar appears when you are in the part of memory where the UDG's reside (beginning with
  65368).
@@ -301,9 +326,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 	>CShift + R:	 Reload the char and the rest (the grid and the UDG, Sprites and Position
 			 bars).
 
+```
 
-2-3. In the 'Useful Locations' selection menu (image 6):
--------------------------------------------------------
+					(image 6)
+
+```
+
+2-3. In the 'Useful Locations' selection menu:
+----------------------------------------------
 
  >In this menu ('L' key in View Mode) you can quickly jump to predefined memory addresses.
 
@@ -330,9 +360,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 	>9: MicroHobby CharSets routine (63040).
 	>0: Start of ROM (00000).
 
+```
 
-2-4. In the MicroHobby CharSets selection screen (image 7):
-----------------------------------------------------------
+					(image 7)
+
+```
+
+2-4. In the MicroHobby CharSets selection screen:
+-------------------------------------------------
 
  >In this screen ('CShift + B' keys in View Mode), you can change the program's text font to one of
  the three fonts in the MicroHobby Charsets memory space. So you can try them to see how they turn
@@ -351,9 +386,14 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
 
 	>Any other key changes to the default font (ROM) and returns to View Mode.
 
+```
 
-2-5. In the Save and Load menus (image 8):
------------------------------------------
+					(image 8)
+
+```
+
+2-5. In the Save and Load menus:
+--------------------------------
 
  >Here you can save/load your Charsets, UDG's, Sprites, etc.
 
@@ -484,7 +524,97 @@ For create multiple charsets and change it with a RANDOMIZE, [Use this tool](htt
  actually is in memory.
 
 
-				6. Final Notes and Acknowledgments:
+					6. ChangeLog.
+					------------
+
+v1.0 RC1 (7-29-2024):
+--------------------
+
+-Updated the english manual and help.
+
+-Fixed a major bug that prevented loading/saving.
+
+-Some keys have been changed.
+
+-Offset added to Sprite mode on Edit Mode. You can change it with the '1' and '2' keys, and reset it
+ with '3'.
+
+-Now in Edit Mode, you can move the cursor without limits (you exit from one side and enter from the
+ opposite).
+
+-Fixed various cosmetic bugs.
+
+-Fixed some minor bugs.
+
+
+v0.96 Berta2 (5-23-2022):
+------------------------
+
+-Base program help has been removed to free up memory for the user. Help can now be loaded separately
+ (in another emulator instance, for example). A 128 style menu has been added to the help.
+
+ Now CShift + H changes the color of the screen border to black (in case you don't like the default
+ blue).
+
+-The program has been moved to another memory location. Before it started around 32637, now it starts
+ at 25200, where help started before. This has been done so that the free memory remains more or less
+ sequentially, although it's true that the MicroHobby charsets selection routine and certain variables
+ and data of the program remains in between.
+
+-The keys to displace the char around the grid have been modified to match the Sinclair 1 Joystick.
+ Sinclair Joystick 1 support has also been added to Edit Mode for moving the cursor.
+
+
+v0.96 Berta1 (4-30-2022):
+------------------------
+
+Character Explorer first Beta.
+
+
+					7. Known bugs.
+					-------------
+
+Aesthetic bugs:
+---------------
+
+-It has happened in a +2A/B in 128k mode, when entering the Save/Load menu (specifically in the Save
+ menu), neither Tape nor RAM has been chosen (by default it's Tape). I remember trying the key that
+ changes it (the T key) several times, and when exiting and re-entering neither of the two options
+ appeared selected (if you press the T key, then back to work correctly). It only happened once and I
+ haven't been able to reproduce it again.
+
+
+Minor bugs:
+-----------
+
+-In Edit Mode, you can displace left from the beginning of MicroHobby charset A and get into the red
+ protected zone (MH routine area, program variables, and the program itself). It doesn't let you edit
+ them (so that's fine).
+
+
+'Normal' bugs:
+--------------
+
+-If you have moved the grid by a number that is not a multiple of 8, you may be able to edit a portion
+ of memory that should be write-protected.
+
+-In Edit Mode, when displacing with CShift + O and P, sometimes the character is inverted (usually I
+ have seen it with the P key). This happened after 'arranging' the lines for the code weighs less. It
+ happened several times, but after continuing coding I can no longer reproduce it.
+
+
+Killer Bugs (it cause to crash the program):
+--------------------------------------------
+
+-When you put the finish selection mark in 65535 and delete it with SShift + Z (or move with
+ SShift + X), the program crashes (at least in the compiled one). I don't know why...
+
+-When loading from certain pointers (current position, mark, etc.) you can override the program's own
+ code and cause it to crash. Be careful when loading. -- I DON'T THINK I'LL PATCH IT, I'M LOW ON
+ MEMORY AND I DON'T THINK I'LL REMEMBER TO DO IT... --
+
+
+				8. Final Notes and Acknowledgments:
 				----------------------------------
 
  On the ZX Origins website (https://damieng.com/typography/zx-origins) you have hundreds of complete
