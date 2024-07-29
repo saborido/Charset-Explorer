@@ -83,7 +83,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-					(image 1)
+![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
 
 					(image 2)
 
