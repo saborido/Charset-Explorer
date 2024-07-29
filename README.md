@@ -71,10 +71,10 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 					1. A not so little introduction:
-					-------------------------------
+					--------------------------------
 
 1-1. Word abbreviations:
------------------------
+------------------------
 
 	CShift ->	 'Caps Shift' Spectrum's key.
 	SShift ->	 'Symbol Shift' Spectrum's key.
@@ -96,7 +96,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 1-3. What is View Mode:
-----------------------
+-----------------------
 
  It's the mode in which the program starts, which is used to -as its name indicates- see parts of the
  memory, although basic modifications can be made such as rotating, inverting, mirroring and more.
@@ -105,7 +105,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 1-4. What is Edit Mode:
-----------------------
+-----------------------
 
  This mode is entered by pressing the 'E' key or the 'Enter' key from Viewer Mode, and allows you to
  modify the char from the grid directly, just like a sprite editor. You'll know you're in Edit Mode
@@ -137,7 +137,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
  Also the colour of the Area Bar indicates whether that part of the memory is protected or not:
 
 	-Dark Blue:	This part belongs to the ROM, and can NOT be modified.
-	-Red:		This area belongs to basic, the program itself and other things, and can NOT
+	-Red:		This area belongs to BASIC, the program itself and other things, and can NOT
 			be modified.
 	-Magenta:	This area belongs to the UDG (User Defined Graphics) and YES it can be
 			modified.
@@ -205,7 +205,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 				---------------------------------------------------
 
 2-1. In View Mode:
------------------
+------------------
 
 					-Grid displacement:
 
@@ -276,7 +276,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 2-2. In Edit Mode:
------------------
+------------------
 
 					-Displacement through the grid:
 
@@ -319,7 +319,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 	>CShift + E:	 It does NOT save the char in memory, restores the original and returns to
 			 View Mode.
 	>Enter:		 Save the char in memory and returns to View Mode.
-	>CShift + Q:	 Save the modified char in memory and exit to Basic (type RUN to return to
+	>CShift + Q:	 Save the modified char in memory and exit to BASIC (type RUN to return to
 			 program).
 
 	>R:		 Updates the UDG, Sprites and Position bars.
@@ -430,7 +430,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 			3. Manually save and load data, character sets, or UDG's:
-			--------------------------------------------------------
+			---------------------------------------------------------
 
  To record or load data manually you have to exit to BASIC with the CShift + Q keys (better you write
  down the memory address and the length of the data to be recorded/loaded on a piece of paper, or you
@@ -451,7 +451,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 				4. Differences between 48k and 128k models:
-				------------------------------------------
+				-------------------------------------------
 
  The program tries to detect the Spectrum model, and what mode it is currently in (mode 128 or 48).
 
@@ -478,7 +478,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 
 				5. About MicroHobby CharSets:
-				----------------------------
+				-----------------------------
 
  This program comes with three character sets. They are the ones that came in MicroHobby magazine
  number 30 (pages 14, 15 and 16), in a section called 'Customize your Spectrum', but the third one
@@ -524,11 +524,11 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
  actually is in memory.
 
 
-					6. ChangeLog.
-					------------
+					6. ChangeLog:
+					-------------
 
 v1.0 RC1 (7-29-2024):
---------------------
+---------------------
 
 -Updated the english manual and help.
 
@@ -548,7 +548,7 @@ v1.0 RC1 (7-29-2024):
 
 
 v0.96 Berta2 (5-23-2022):
-------------------------
+-------------------------
 
 -Base program help has been removed to free up memory for the user. Help can now be loaded separately
  (in another emulator instance, for example). A 128 style menu has been added to the help.
@@ -566,13 +566,13 @@ v0.96 Berta2 (5-23-2022):
 
 
 v0.96 Berta1 (4-30-2022):
-------------------------
+-------------------------
 
 Character Explorer first Beta.
 
 
-					7. Known bugs.
-					-------------
+					7. Known bugs:
+					--------------
 
 Aesthetic bugs:
 ---------------
@@ -615,7 +615,7 @@ Killer Bugs (it cause to crash the program):
 
 
 				8. Final Notes and Acknowledgments:
-				----------------------------------
+				-----------------------------------
 
  On the ZX Origins website (https://damieng.com/typography/zx-origins) you have hundreds of complete
  charsets at your disposal for download. This website is pure gold. Thanks a lot to DamienG for
