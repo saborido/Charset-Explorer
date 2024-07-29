@@ -376,11 +376,11 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 	>Any other key changes to the default font (ROM) and returns to View Mode.
 
-
+```
 
 ![charxp_barra_area-](https://github.com/saborido/Charset-Explorer/assets/11407070/fc049220-3168-40a2-bd0e-10b810a5569a)
 
-
+```
 
 2-5. In the Save and Load menus:
 --------------------------------
