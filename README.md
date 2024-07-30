@@ -73,9 +73,9 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![charsxp_test (28-3-2022)](https://github.com/saborido/Charset-Explorer/assets/11407070/09b12b79-d10f-4629-b2e8-7321127c1f85)
+![Image 1 - User interface - View Mode](https://github.com/user-attachments/assets/d48957b9-a590-4b86-ae70-ea1395c5f6e2)
 
-![charsxp_test (28-3-2022)](https://github.com/saborido/Charset-Explorer/assets/11407070/09b12b79-d10f-4629-b2e8-7321127c1f85)
+![Image 2 - User interface - Edit Mode](https://github.com/user-attachments/assets/38feaff0-d458-421c-b076-172bf86df61b)
 
 ```
 
@@ -114,7 +114,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![charxp_barra_area-](https://github.com/saborido/Charset-Explorer/assets/11407070/fc049220-3168-40a2-bd0e-10b810a5569a)
+![Image 3 - Area bar](https://github.com/user-attachments/assets/025dce9d-7da5-4d88-b19c-181cd8eec33f)
 
 ```
 
@@ -147,7 +147,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![seamless](https://github.com/saborido/Charset-Explorer/assets/11407070/9547aadc-4829-4e62-88df-c5704ae3162b)
+![Image 4 - Byte Info](https://github.com/user-attachments/assets/39144986-4903-4cdd-b717-c1be6cbcb07a)
 
 ```
 
@@ -177,7 +177,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![save_load](https://github.com/saborido/Charset-Explorer/assets/11407070/70f1a0ee-0f64-49ab-a809-1872e0744890)
+![Image 5 - UDG's bar](https://github.com/user-attachments/assets/841114ba-f065-4672-b42a-6c43e3b26653)
 
 ```
 
@@ -318,7 +318,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
+![Image 6 - 'Useful Locations' menu](https://github.com/user-attachments/assets/b54bb1f3-b1f2-4b81-aa2c-9fd61e653eaf)
 
 ```
 
@@ -352,7 +352,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![chars_bar](https://github.com/saborido/Charset-Explorer/assets/11407070/12c12dca-0bbb-4332-8618-93302d39c88e)
+![Image 7 - MicroHobby CharSets menu](https://github.com/user-attachments/assets/8bef1c80-1cd4-4d6b-b012-6e77db0bae15)
 
 ```
 
@@ -378,7 +378,7 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ```
 
-![charxp_barra_area-](https://github.com/saborido/Charset-Explorer/assets/11407070/fc049220-3168-40a2-bd0e-10b810a5569a)
+![Image 8 - Save and Load menu](https://github.com/user-attachments/assets/5996606f-8f53-4a78-84e2-6a6886194026)
 
 ```
 
