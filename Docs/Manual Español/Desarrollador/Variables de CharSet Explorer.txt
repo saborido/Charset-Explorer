@@ -1,0 +1,95 @@
+
+				Variables CharsetExp
+				--------------------
+
+	> Variables numericas de enteros POSINT (INT+, sin signo, entre 0 y 65535):
+	--------------------------------------------------------------------------
+
+		>Temporales:
+
+ b: Se usa en muchas ocasiones.
+ c: Se usa para el codigo del Inkey$. Se rehusa en varias ocasiones.
+ f: Se usa sólo de momento para indicar la dirección de inicio para pokear 16bits en la memoria.
+ g: Se usa sólo de momento para indicar el valor a pokear en la variable 'f'.
+ n: Se usa en algun bucle IF... NEXT anidado. Se rehusa en multiples ocasiones.
+ r: Se usa en multiples ocasiones.
+ z: Se usa en casi todos los bucles IF... NEXT. Se rehusa en varias ocasiones.
+di: Direccion para cambiar la variable del sistema CHARS. Se rehusa en varias ocasiones.
+
+		>Fijas:
+
+ a: Modo de copiado del clipboard. Char (1), byte (0), clipboard limpio (2).
+ d: Direccion del primer byte del caracter seleccionado.
+ h: Modo hexadecimal/decimal. Decimal (0), Hexadecimal (1).
+ i: El color del borde, azul (1) o negro (0).
+ p: Posicion Y de la barra de seleccion amarilla (0-7). (en MODO EDICION) Se usa para la
+     coordenada Y del grid (0-7). --Y: ^ Eje vertical (altura) --
+ u: Activacion de barra de UDG's. Off (0), On (1)¿, cambiar (2)?.
+ag: Modo Sprites/AGD. On (1), Off (0).
+ar: Determina el área (de la barra de Area) en la que estamos.
+bi: Modo binario (1) o pixeles (0).
+br: Se usa en el dibujado del pixel en la rejilla, creo que para saber si lo desactiva o activa.
+dr: (en MODO EDICION) Pixel On (1), Off (0).
+ed: Modo Edicion activo/inactivo. En Modo Edicion (1), en Modo Visor (0).
+ee: Se activa al salir del modo edicion. Se acaba de salir (1), no se acaba de salir (0).
+ex: (en MODO EDICION) Se usa para la coordenada X del grid. --X: > Eje horizontal (ancho) --
+ic: El color del char que se está editando, en la ventanita esa con el recuadro.
+md: Modo de Spectrum. 48k (0), 128/+2 (1), +2A/B/+3 -sin disco- (2), +2A/B -con disco-/+3 (3).
+ol: Se usa en el dibujado del pixel en la rejilla, para guardar el valor del atributo de color.
+ox: (en MODO EDICION) Se usa para la coordenada old X del grid.
+oy: (en MODO EDICION) Se usa para la coordenada old Y del grid.
+pa: Color del papel del grid (0-7).
+ro: Se usa cuando se copia y pega, creo que para saber si copia un byte o un char.
+sb: Modo Seamless Background. On (1), Off (0).
+sv: Se usa para especificar si se dibuja el menú de Save o de Load, y actuar en consecuencia.
+tn: El color de los puntos del fondo de la rejilla (los pixeles desactivados).
+tp: El color de la tinta (los pixeles encendidos) de la rejilla.
+zz: Dibujar Char o solo un byte. Char (7), byte (1).
+
+
+	> Variables numericas de enteros INTEG (INT, con signo, entre -32768 y 32767):
+	-----------------------------------------------------------------------------
+
+os: Especifica el offset de la barra de Sprites.
+
+
+	> Otras variables numericas (REALES):
+	------------------------------------
+
+ k: Variable temporal de numero REAL con signo (5 bytes).
+
+
+	> Variables alfanumericas (STIRNG$ - cadenas de texto):
+	------------------------------------------------------
+
+h$: Secuencia de datos de 8 numeros en hexadecimal (16 caracteres de largo). Rehusada
+     en varias ocasiones para pasar de hexadecimal a decimal.				-Longitud: 50
+i$: Se usa para el texto superior (donde pone el modo de Spectrum).			-Longitud: 24
+k$: Se usa para el ajedrezado del brillo de la rejilla, y seguramente en mas sitios.	-Longitud: 27
+m$: Formato del pixel ON en el grid. Se rehusa en multitud de ocasiones.		-Longitud: 25
+n$: Formato del pixel OFF en el grid. Se rehusa en multitud de ocasiones.		-Longitud: 24
+v$: Valor de un byte. Rehusada en alguna ocasion.					-Longitud: 5
+
+
+	> Arrays:
+	--------
+
+ p(): Array de una dimension y 11 huecos.
+b$(): Array de dos dimensiones (16,12). -Longitud: ¿192?
+
+
+	> Funciones de usuario:
+	----------------------
+
+ e (fn): Funcion DEF FN e(h$,z) -Hex2Dec- para pasar de hexadecimal a decimal valores de 8 bits
+	 (z=1, de 0x00h a 0xFFh). La variable local 'z' es la posicion de la cadena local 'h$' de
+	 la que lee. -- POSINT sin signo --
+h$ (fn): Funcion DEF FN h$(z) -Dec2Hex- para pasar de decimal a hexadecimal valores de 8 bits (de
+	 0 a 255). La variable local 'z' es el numero a ingresar (0-255). -- STRING$ --
+
+
+	> Variables numericas dummy:
+	---------------------------
+
+ z: Usada como dummy local en 'e (fn)' -> DEF FN e(h$,z) y en 'h$ (fn)' -> DEF FN h$(z).
+h$: Usada como dummy local en 'e (fn)' -> DEF FN e(h$,z).

@@ -1,0 +1,24 @@
+Both in View Mode and Edit Mode the following keys are repeated:
+---------------------------------------------------------------
+
+ Although these keys are listed in the manual, I've listed them here so you know which ones are the same (and
+ do exactly the same thing) in the two modes. All other keys differ, even though they do the same action.
+
+	>B: Binary mode.
+
+	>G: Change the grid background colour.
+	>CShift + G: Changes the colour of the background dots (inactive pixels) of the grid.
+	>SShift + K: Changes the ink colour (active pixels) of the grid.
+
+	>CShift + D: Delete current char.		>CShift + Z: Delete the yellow selected row (byte).
+
+	>F: Flip the char vertically.			>CShift + F: Flip the char horizontally.
+
+	>SShift + 6, 7, 8 and 9 (Sinclair Joystick): 'Accommodate' the char in grid.
+	>SShift + 0 (Shot on Sinclair Joystick): Invert the char.
+
+	>CShift + Q: Goes to Basic (type RUN to reload the program).
+
+
+ This is because in each mode they have a different use, and it would be a major hassle for the keyboard
+ organization to try to change them, although I'm open to recommendations...

@@ -1,0 +1,44 @@
+			>Variables en memoria usados en Save/Load:
+			-----------------------------------------
+
+>63038: Variable de la ayuda y de save/load.						-- 1 byte.
+
+>63036: Dispositivo de Save/Load: 1>Tape, 2>Disk, 3>RAM.				-- 1 byte.
+
+>63037: Modo de Save/Load: 1>Save, 0>Load, 2>Verify.					-- 1 byte.
+
+
+			>Direcciones guardadas en Save/Load:
+			-----------------------------------
+
+>62984-62985: Posición de inicio de Save/Load.						-- 2 bytes.
+
+>62986-62987: Longitud de datos a guardar con Save.					-- 2 bytes.
+
+>62988-62989: Marca de inicion de selección/save-load.					-- 2 bytes.
+
+>62990-62991: Marca final de selección/save.						-- 2 bytes.
+
+------------------------------------------------------------------------------------------------------------
+
+			>Al Save/Load (al salir del programa): 63038
+			--------------------------------------------
+
+	menor que 100: Sale al BASIC.
+	100:	'Trigger' del guardado o la carga.
+	101:	Grabar programa completo.
+	102:	Load from file header.
+	103:	???? Supongo que si ha de grabar en disco...
+
+	-Al salir del Menu de Save/Load: Poner siempre a 0.
+
+Los modos (variable md) son:
+
+	0 - Es un Spectrum 48k o un 128 está en modo 48k. Sólo está disponible la cinta para save/load.
+	1 - Es un Spectrum 128 o un Spectrum +2 (el gris). Está disponible la cinta y la RAM (con el signo !).
+	2 - Es un Spectrum +2A/B o un +3. Está disponible la cinta y la RAM (acceso moderno con m:).
+	3 - Es un Spectrum +2A/B con disco o un +3. Está disponible el disco, la cinta y la RAM (acceso con m:).
+
+Dirección 63036: Guardar en Tape(1), Disk(2), RAM(3).
+
+Dirección 63037: Cargar/guardar. Load(0), Save(1).

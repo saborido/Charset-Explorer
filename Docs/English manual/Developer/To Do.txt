@@ -1,0 +1,41 @@
+To Do:
+-----
+
+-Line 7216, GO SUB 246:GO TO 95, look at more similar lines and simplify if possible (7237). -- WHAT? --
+
+-If the character is not a multiple of 8 (it has been shifted up or down), the block can
+ be edited if the cursor is previously in a write-protected area, even if the other part
+ of the block is in a write-protected area.
+
+-That the loading does not destroy parts of the program. -- THERE ARE NO PLANS TO FIX THIS, BE CAREFUL WHEN LOADING --
+
+-Check all the save and load possibilities on all popular Spectrum models.
+
+
+About selection marks:
+---------------------
+
+ -Look what the loop does when it checks whether the variables area and the MH charsets routine
+  are going to be deleted with SShift+X or +Z and simplify it..	-- FIXED, I THINK --
+
+ -It does not check if an area of ​​the ROM is going to be erased.	-- FIXED --
+
+ -Address 00000 cannot be selected.	-- THIS IS GOING TO STAY LIKE THAT, I THINK... --
+
+ -Addresses do not appear with leading zeros in decimal selection marks. -- FIXED --
+
+
+Remove when compiling:
+---------------------
+
+ -Delete ALL lines starting with a REM. -- DONE --
+
+ -Delete ALL spaces at the beginning of subroutines.
+
+ -Change ALL CODE = "*" to the character number.
+
+ -Change ALL VAL "number" to just the number. Compiled it takes up less space, I think.
+
+ -Checking if help exists. -- NO LONGER BUILT-IN HELP --
+
+ -Delete the lines: 1

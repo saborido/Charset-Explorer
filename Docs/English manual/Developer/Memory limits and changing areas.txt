@@ -1,0 +1,15 @@
+Program:	25200 to 55736, but set it to 56000 to give it margin (actually the program ends at 55240).
+Free memory:	56000 to 62967.
+Datas & vars:	62968 (actually 62975) until 63038.
+MH routine:	63039 to 63063.
+MHchars:	63064 to 65367.
+UDG:		65368 to 65519 (128k) or until 65535 (48k).
+
+
+			>Parts where addresses are used that may change:
+			-----------------------------------------------
+
+		-The CheckArea_SUBR:	Line   830.
+		-The Locations Menu:	Line  1547.
+		-The Save/Load:		Lines 2650 and 2655.
+		-The CopyLargeData:	Lines 3501 and 3502.

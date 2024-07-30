@@ -1,0 +1,96 @@
+
+					CharsetExp variables
+					--------------------
+
+	> Integer numeric variables POSINT (INT+, with sign, between 0 and 65535):
+	--------------------------------------------------------------------------
+
+		>Temporaries:
+
+ b: It is used on many occasions.
+ c: Used for Inkey$ code. Reused several times.
+ f: It is only used at the moment to indicate the starting address for poking 16 bits into memory.
+ g: It is only used at the moment to indicate the value to poke in the 'f' variable.
+ n: Used in some nested IF...NEXT loops. Reused multiple times.
+ r: It is used on multiple occasions.
+ z: Used in almost all IF...NEXT loops. Reused several times.
+di: Address to change the CHARS System variable. It is refused several times.
+
+		>Fixed:
+
+ a: Clipboard copying Mode. Char (1), byte (0), clean clipboard (2).
+ d: Address of the first byte of the selected character.
+ h: Hexadecimal/decimal mode. Decimal (0), Hexadecimal (1).
+ i: The border color, blue (1) or black (0).
+ p: Y position of the yellow selection bar (0-7). (in EDIT MODE) Used for the Y
+    coordinate of the grid (0-7). --Y: ^ Vertical axis (height) --
+ u: UDGs bar activation. Off (0), On (1)?, change(2)?.
+ag: Sprites/AGD mode. On (1), Off (0).
+ar: Determines the area (of the Area bar) in which we are.
+bi: Binary mode (1) or pixels (0).
+br: It is used in drawing the pixel on the grid, I think to know if it deactivates or activates it.
+dr: (in EDIT MODE) Pixel On (1), Off (0).
+ed: Edit mode active/inactive. In Edit Mode (1), in Viewer Mode (0).
+ee: It is activated when exiting Edit Mode. You have just exited (1), you have not just exited (0).
+ex: (in EDIT MODE) Used for the X coordinate of the grid. --X: > Horizontal axis (width) --
+ic: The colour of the character being edited, in that little window with the box.
+md: Spectrum mode. 48k (0), 128/+2 (1), +2A/B/+3 -without disc- (2), +2A/B -with disc-/+3 (3).
+ol: It is used in drawing the pixel on the grid, to store the value of the colour attribute.
+ox: (in EDIT MODE) Used for the old X coordinate of the grid.
+oy: (in EDIT MODE) Used for the old Y coordinate of the grid.
+pa: Grid paper colour (0-7).
+ro: It is used when copying and pasting, I think to know if you are copying a byte or a char.
+sb: Seamless Background mode. On (1), Off (0).
+sv: Used to specify whether to draw the Save or Load menu, and act accordingly.
+tn: The colour of the grid background dots (the disabled pixels).
+tp: The colour of the ink (the lit pixels) of the grid.
+zz: Draw Char or just a byte. Char(7), byte(1).
+
+
+	> Integer numeric variables INTEG (INT, signed, between -32768 and 32767):
+	-------------------------------------------------------------------------
+
+os: Specifies the offset of the Sprites bar.
+
+
+	> Other numeric variables (REAL):
+	--------------------------------
+
+ k: Temporary signed REAL number variable (5 bytes).
+
+
+	> Alphanumeric variables (STRING$ - text strings):
+	-------------------------------------------------
+
+h$: Data sequence of 8 hexadecimal numbers (16 characters long). Reused several
+    times to convert from hexadecimal to decimal.					-Length: 50
+i$: It is used for the upper text (where the Spectrum mode is set).			-Length: 24
+k$: It is used for the checkered pattern of the brightness of the grille,
+    and surely in more places.								-Length: 27
+m$: ON pixel format in the grid. It is reused in many cases.				-Length: 25
+n$: Pixel format OFF in grid. Reused on many occasions.					-Length: 24
+v$: Value of one byte. Occasionally reused.						-Length: 5
+
+
+	> Arrays:
+	--------
+
+ p(): One-dimensional array with 11 slots.
+b$(): Two-dimensional array (16,12). -Length: ¿192?
+
+
+	> User functions:
+	----------------
+
+ e (fn): DEF FN e(h$,z)	 Function -Hex2Dec- to convert 8-bit values ​​from hexadecimal to decimal
+	 (z=1, from 0x00h to 0xFFh). The local variable 'z' is the position of the local string 'h$'
+	 from which it reads. -- POSINT unsigned --
+h$ (fn): DEF FN h$(z)	 Function -Dec2Hex- to convert 8-bit values ​​(0 to 255) from decimal to
+	 hexadecimal. The local variable 'z' is the number to enter (0-255). -- STRING$ --
+
+
+	> Numerical dummy variables:
+	---------------------------
+
+ z: Used as a local dummy in 'e (fn)' -> DEF FN e(h$,z) and in 'h$ (fn)' -> DEF FN h$(z).
+h$: Used as a local dummy in 'e (fn)' -> DEF FN e(h$,z).

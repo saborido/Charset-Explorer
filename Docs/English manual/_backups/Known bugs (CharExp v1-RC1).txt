@@ -1,0 +1,35 @@
+Aesthetic bugs:
+---------------
+
+-It has happened in a +2A/B in 128k mode, when entering the Save/Load menu (specifically in the Save menu), neither Tape
+ nor RAM has been chosen (by default it's Tape). I remember trying the key that changes it (the T key) several times, and
+ when exiting and re-entering neither of the two options appeared selected (if you press the T key, then back to work
+ correctly). It only happened once and I haven't been able to reproduce it again.
+
+
+Minor bugs:
+-----------
+
+-In Edit Mode, you can displace left from the beginning of MicroHobby charset A and get into the red protected zone (MH
+ routine area, program variables, and the program itself). It doesn't let you edit them (so that's fine).
+
+
+'Normal' bugs:
+--------------
+
+-Si has movido la rejilla un número que no sea múltiplo de 8, puede que puedas editar una parte de la memoria que
+ debiera de estar protegida de escritura.
+
+-In Edit Mode, when displacing with CShift + O and P, sometimes the character is inverted (usually I have seen it with the
+ P key). This happened after 'arranging' the lines for the code weighs less. It happened several times, but after continuing
+ coding I can no longer reproduce it.
+
+
+Killer Bugs (it cause to crash the program):
+--------------------------------------------
+
+-When you put the finish selection mark in 65535 and delete it with SShift + Z (or move with SShift + X), the program crashes (at least in the compiled one). I don't know why...
+
+-AL cargar desde ciertos punteros (posición actual, marca, etc) puedes machacar código propio del programa y hacer que
+ éste crashee. Sé cuidadoso cuando cargues. -- NO CREO QUE LO PARCHEE, VOY ESCASO DE MEMORIA Y NO CREO QUE ME ACUERDE
+ DE HACERLO... --

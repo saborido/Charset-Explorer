@@ -1,0 +1,15 @@
+Program:	25200 hasta 55736, pero poner en 56000 para dar margen (en realidad el programa acaba en 55240).
+Free memory:	56000 hasta 62967.
+Datas & vars:	62968 (en realidad 62975) hasta 63038.
+MH routine:	63039 hasta 63063.
+MHchars:	63064 hasta 65367.
+UDG:		65368 hasta 65519 (128k) o hasta 65535 (48k).
+
+
+			>Partes donde se usan direcciones que pueden cambiar:
+			----------------------------------------------------
+
+		-El CheckArea_SUBR:	Linea   830.
+		-El Locations Menu:	Linea  1547.
+		-El Save/Load:		Lineas 2650 y 2655.
+		-El CopyLargeData:	Lineas 3501 y 3502.

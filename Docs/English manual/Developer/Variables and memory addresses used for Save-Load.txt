@@ -1,0 +1,44 @@
+			>In-memory variables used in Save/Load:
+			--------------------------------------
+
+>63038: Help and save/load variable.							-- 1 byte.
+
+>63036: Save/Load device: 1>Tape, 2>Disk, 3>RAM.					-- 1 byte.
+
+>63037: Save/Load mode: 1>Save, 0>Load, 2>Verify.					-- 1 byte.
+
+
+				>Addresses stored in Save/Load:
+				------------------------------
+
+>62984-62985: Save/Load Starting Position.						-- 2 bytes.
+
+>62986-62987: Data length to be saved with Save.					-- 2 bytes.
+
+>62988-62989: Selection/save-load start mark.						-- 2 bytes.
+
+>62990-62991: Final selection/save mark.						-- 2 bytes.
+
+------------------------------------------------------------------------------------------------------------
+
+			>On Save/Load (when exiting the program): 63038
+			-----------------------------------------------
+
+	less than 100: Exits to BASIC.
+	100:	'Trigger' for saving or loading.
+	101:	Save complete program.
+	102:	Load from file header.
+	103:	???? I guess if you have to record on disk...
+
+	-When exiting the Save/Load menu: Always set to 0.
+
+The modes ('md' variable) are:
+
+	0 - It's a Spectrum 48k or a 128 in 48k mode. Only the tape is available for save/load.
+	1 - It's a Spectrum 128 or a Spectrum +2 (the grey one). The tape and RAM are available (with the ! sign).
+	2 - It's a Spectrum +2A/B or a +3. Tape and RAM are available (modern access with m:).
+	3 - It's a Spectrum +2A/B with disk or a +3. Disk, tape and RAM are available (access with m:).
+
+Dirección 63036: Save to Tape(1), Disk(2), RAM(3).
+
+Dirección 63037: Load/Save. Load(0), Save(1).
