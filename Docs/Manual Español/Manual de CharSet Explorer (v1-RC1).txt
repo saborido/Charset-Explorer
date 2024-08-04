@@ -464,5 +464,5 @@ PD: Vale, puede que se me haya ido un poco de las manos tanta tecla. Lo siento m
 
 
 ----------------------------------------------------------------------------------------------------------------------------
--- CharsExp v1.0 RC1 (27-julio-2024) --						-- Por Saúl Saborido ('sulas' en discord) --
+-- CharsExp v1.0 RC1 (27-julio-2024) --							     -- Por Saúl Saborido (sulas) --
 ----------------------------------------------------------------------------------------------------------------------------
