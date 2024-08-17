@@ -1,0 +1,125 @@
+----------------------------------------------------------------------------------------------------------------------------
+-- Charset Explorer v1.0 RC1 (7-27-2024) --										  --
+----------------------------------------------------------------------------------------------------------------------------
+
+					      How to compile the program
+					      --------------------------
+
+
+  I recommend using a 128k model 128 mode to do the compilation. The final binary will work on both 48k and 128k versions.
+
+  >The FIRST thing you should do is enter 128 BASIC and load the HiSoft compiler (tape "_HisoftCompiler_128k.tzx") with
+   LOAD "".
+
+  >SECOND, do a CLEAR 62967.
+
+  >THIRD, load the BASIC program you want to compile (in our case the "charsetxp_rc1.tap" tape) with a LOAD "".
+
+  >FOURTH (optional but recommended): Press the Edit key (or CShift + 1 keys) and select Screen mode to display the code
+   on the top screen and the prompt on the bottom screen. This makes it easier to avoid clearing some information on the
+   upper screen when the build is complete. This way you can make a SAVE with the addresses indicated by the compiler
+   without having to write them down separately.
+
+  >FIFTH, press in order and without releasing (quickly), the CShift, 3 and 4 keys, and the compiler menu will open.
+
+  >SIXTH, press the C key to start the compilation. The compilation consists of three steps.
+
+
+					   During the compilation process
+					   ------------------------------
+
+  Now the screen will start doing things. Wait until the first step is completed. When it does, the screen will turn CYAN,
+ and it will wait for you to press a key (but it won't tell you). At this point press a key to continue with the second
+ step of the compilation.
+
+  Now it will continue compiling and doing things on the screen for a while, and if everything goes well, it should ask
+ you "OK TO DELETE BASIC? (Y/N)", to which you have to respond with the Y key. Now the screen colour will change to white,
+ and it will wait for a key to be pressed to continue with the third and final step of the compilation.
+
+  It will do things on the screen again, and when it finishes you will get some information on the screen, but what
+ interests us is the penultimate line, the SAVE line. It is important that you do not press any key on this emulator screen.
+
+
+					Creating the loader for our binary
+					----------------------------------
+
+  At this point, you must open another instance of the emulator, or open a different one but without closing the one we
+ are using for the compilation. What we are going to do next is the LOADER of the binary code that we have just created.
+
+  Take the tape of the latest version of the loader ("loader (1-25-2024).tap") and load it into the second emulator. In
+ the BASIC list, look for line 69 (totally coincidental...) and look for the command in the middle of the line:
+
+	 SAVE "code" CODE VAL "25200", VAL "30159"
+
+  And now change the number to the right of the comma (VAL "30159") for the number to the right of the comma that the
+ SAVE "m/c"CODE xxxxx,XXXXX line tells you (the capital X's are the ones that correspond to the number that you have to
+ replace in the loader) of the emulator screen where we have the compiler results. If you have not changed anything in
+ the program, that number should be 30159, so you should not change anything since it is the number that is predetermined
+ in the loader.
+
+  Now, to save the updated loader, we need to create a blank tape to save it to. This is going to be the definitive tape
+ of the program. Save the loader with SAVE "name" LINE 2.
+
+  Remove the loader tape from its corresponding emulator (you can now close it) and insert it into the emulator where we
+ were compiling.
+
+  If you haven't done the fourth step of this manual (the one that was optional), write down the numbers behind the CODE
+ of the SAVE line "m/c"CODE xxxxx,xxxxx somewhere because we are going to need it right now.
+
+  Now you must exit the compiler information screen, to do this press any key. If you have skipped the fourth step, the
+ screen will be cleared and you will return to the BASIC prompt. If you have done the fourth step, the upper screen will
+ not be deleted, and you will have the information we need now in view.
+
+
+					Save the binary to the loader tape
+					----------------------------------
+
+  We are going to save the binary on the tape where we have created the loader. Type:
+
+	 SAVE "code" CODE address,length	-Where "address" and "length" are the corresponding values of the
+						 SAVE "m/c"CODE line that we should have on hand taken from the compiler
+						 info.
+
+  Now the program tape has two files. The loader and then the program binary, but there are still more things missing. There
+ are some assembler routines missing and a set of three character sets for testing.
+
+
+					    Finalizing the program tape
+					    ---------------------------
+
+  Now we proceed to restart the emulator so we can load the tape that automatically copies what is missing. Find and
+ insert the "p_final.tap" tape into the emulator and load it with LOAD "". You will see on-screen instructions on how
+ to proceed, which are basically that you insert the tape of the compilation that we are creating (the one with the loader
+ and the binary), press record and press a key. When it finishes recording, the final tape will already be created.
+
+  Now you can test the tape by restarting the emulator and loading with LOAD "" (remember to put the tape at the beginning).
+
+  If everything has gone well, the program should work properly.
+
+
+
+					 Notes on the HiSoft BASIC compiler
+					 ----------------------------------
+
+
+  BASIC lines from 3 to 9 are compiler directives. The program compiles whatever is between line 9 and line 9990 (OPEN #
+ and CLOSE # directives). All this and much more is reflected in the HiSoft BASIC compiler version 1.2 help manual. I
+ highly recommend reading it if you are thinking of using this compiler for your projects.
+
+  If you've taken a look at the BASIC code, you may have noticed a few peculiarities. Some of them are to remind me of
+ things, like for example that the lines that start with a space are referenced in some other part of the code (in a GO TO
+ or in a GO SUB), so I can take it into account if I want to change your line number.
+
+  Some other peculiarities are optimizations for the HiSoft compiler: For example, there is no ':' (colon) after an IF
+ statement. The compiler has many forms of optimization, not just the one in the IF case.
+
+  If you want to download both the compiler and the manual, visit https://worldofspectrum.net/item/0008249/
+
+  An important note: The 1.2 version of the tape is on Side B of the tape where the 1.1 version comes from. In the 'World
+ Of Spectrum' site, the file it's wrongly indicated.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+-- CharsExp v1.0 RC1 (7-27-2024) --							      -- By Saúl Saborido (sulas) --
+----------------------------------------------------------------------------------------------------------------------------

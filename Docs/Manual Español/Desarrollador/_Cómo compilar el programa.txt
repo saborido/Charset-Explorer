@@ -1,0 +1,125 @@
+----------------------------------------------------------------------------------------------------------------------------
+-- Charset Explorer v1.0 RC1 (27-julio-2024) --										  --
+----------------------------------------------------------------------------------------------------------------------------
+
+						Cómo compilar el programa
+						-------------------------
+
+
+  Te recomiendo usar un modelo de 128k en su modo 128 para hacer la compilación. El binario final funcionará tanto en
+ versiones de 48k como de 128k.
+
+  >Lo PRIMERO que debes hacer es entrar al 128 BASIC y cargar el compilador de HiSoft (tape "_HisoftCompiler_128k.tzx")
+   con LOAD "".
+
+  >SEGUNDO, haz un CLEAR 62967.
+
+  >TERCERO, carga el programa BASIC que quieres compilar (en nuestro caso el tape "charsetxp_rc1.tap") con un LOAD "".
+
+  >CUARTO (opcional pero recomendado): Pulsa la tecla Edit (o con las teclas CShift + 1) y selecciona el modo Pantalla
+   (o Screen) para que te salga el código en la pantalla superior y el prompt en la pantalla inferior. Esto facilita que
+   no se borre cierta información en la pantalla superior al finalizar la compilación. Así podrás hacer un SAVE con las
+   direcciones que te indica el compilador sin necesidad de tener que apuntarlas aparte.
+
+  >QUINTO, pulsa en orden y sin soltar (rápido), las teclas CShift, 3 y 4, y se te abrirá el menú del compilador.
+
+  >SEXTO, dale a la tecla C para empezar la compilación. La compilación consta de tres pasos.
+
+
+					  Durante el proceso de compilación
+					  ---------------------------------
+
+  Ahora se pondrá la pantalla a hacer cosicas. Espera hasta que complete el primer paso. Cuando lo haga, la pantalla se
+ volverá de color CYAN, y esperará a que pulses una tecla (pero no te lo va a decir). En este punto dale a una tecla para 
+ que continúe con el segundo paso de la compilación.
+
+  En este momento seguirá compilando y haciendo cosicas en la pantalla durante un tiempo, y si todo va bien, te debe de
+ preguntar "OKAY TO DELETE BASIC? (Y/N)", a lo que tienes que responder con la tecla Y. Ahora el color de la pantalla
+ cambiará a blanco, y esperará a la pulsación de una tecla para seguir con el tercer y último paso de la compilación.
+
+  Volverá a hacer cosicas en la pantalla, y al finalizar te saldrá cierta información en la pantalla, pero lo que nos
+ interesa es la penúltima línea, la de SAVE. Importante que no pulses ninguna tecla en esta pantalla del emulador.
+
+
+					Creando el loader de nuestro binario
+					------------------------------------
+
+  En este punto, debes abrir otra instancia del emulador, o abrir otro distinto pero sin cerrar el que estamos usando
+ para la compilación. Lo que vamos a hacer a continuación es el LOADER del código binario que acabamos de crear.
+
+  Coge el tape de la última versión del loader ("loader (25-1-2024).tap") y cárgalo en el segundo emulador. En el listado
+ BASIC busca la línea 69 (totalmente casual...) y busca sobre la mitad de la línea el comando:
+
+	 SAVE "code" CODE VAL "25200", VAL "30159"
+
+  Y ahora cambia el número de la derecha de la coma (VAL "30159") por el número de la derecha de la coma que te dice la
+ línea de SAVE "m/c"CODE xxxxx,XXXXX (las equis mayúsculas son las que corresponden al número que tienes que reemplazar
+ en el loader) de la pantalla del emulador donde tenemos los resultados compilador. Si no has cambiado nada del programa,
+ ese número debería de ser 30159, por lo que no deberías de cambiar nada ya que es el número que viene peredeterminado en
+ el loader.
+
+  Ahora, para guardar el loader actualizado, necesitamos crear un tape en blanco en el que grabarlo. Este va a ser el tape
+ definitivo del programa. Guarda el loader con SAVE "nombre" LINE 2.
+
+  Saca el tape del loader de su emulador correspondiente (ya lo puedes cerrar) y lo metes en el emulador donde estábamos
+ haciendo la compilación.
+
+  Si no has hecho el paso cuarto de este manual (el que era opcional), escríbete los números de detrás de CODE de la línea
+ de SAVE "m/c"CODE xxxxx,xxxxx en algún sitio porque la vamos a nacesitar ahora mismo.
+
+  Ahora debes de salir de la pantalla de información del compilador, para ello pulsa cualquier tecla. Si te has saltado el
+ paso cuarto, la pantalla se te borrará y volverás al prompt del BASIC. Si has hecho el paso cuarto, la pantalla superior
+ no se borrará, y tendrás a la vista la información que necesitamos ahora.
+
+
+				     Guardar el binario en el tape del loader
+				     ----------------------------------------
+
+  Vamos a guardar el binario en el tape donde hemos creado el loader. Escribe:
+
+	 SAVE "code" CODE dirección,longitud	-Donde "dirección" y "longitud" son los valores correspondientes de la
+						 línea de SAVE "m/c"CODE que deberíamos de tener a mano sacado de la info
+						 del compilador.
+
+  Ahora la cinta del programa tiene dos archivos. El loader y a continuación el binario del programa, pero aún faltan más
+ cosas. Faltan unas rutinas en ensamblador y un set de tres juegos de caracteres para hacer pruebas.
+
+
+					Finalizando el tape del programa
+					--------------------------------
+
+  Ahora procedemos a reiniciar el emulador para que podamos cargar el tape que nos copia lo que falta automáticamente. Busca
+ y mete el tape "p_final.tap" en el emulador y cárgalo con LOAD "". Te saldrán instrucciones en pantalla de cómo proceder,
+ que son básicamente que metas el tape de la compilación que estamos creando (el que tiene el loader y el binario), darle
+ a grabar y pulsar una tecla. Cuando finalice de grabar, ya estará creado el tape final.
+
+  Ahora puedes probar el tape, reiniciando el emulador y cargando con LOAD "" (acuérdate de poner el tape al principio).
+
+  Si todo ha salido bien, el programa debería funcionar correctamente.
+
+
+
+				   Notas sobre el compilador BASIC de HiSoft
+				   -----------------------------------------
+
+  Las líneas de BASIC del 3 al 9, son directivas del compilador. El programa compila lo que hay entre la línea 9 y la línea
+ 9990 (directivas OPEN # y CLOSE #). Todo esto y mucho más aparece reflejado en el manual de ayuda del compilador de BASIC
+ de HiSoft versión 1.2. Te recomiendo mucho su lectura si piensas en usar este compilador para tus proyectos.
+
+  Si le has echado un vistazo al código BASIC puede que te hayas dado cuenta de ciertas peculiaridades. Algunas de ellas
+ son para recordarme cosas, como por ejemplo que las líneas que empiezan con un espacio, es que están referenciadas en
+ alguna otra parte del código (en un GO TO o en un GO SUB), para así tenrlo en cuenta si pretendo cambiar su número de línea.
+
+  Algunas otras peculiaridades son optimizaciones para el compilador de HiSoft. Por ejemplo, que no hayan ':' (dos puntos)
+ después de una sentencia IF. El compilador tiene muchas formas de optimización, no sólo la del caso del IF.
+
+  Si quieres descargar tanto el compilador como su manual, visita la página https://worldofspectrum.net/item/0008249/
+
+  Una nota importante: La versión 1.2 de cinta está en la Cara B de la cinta donde viene la versión 1.1. En el archivo del
+ sitio de 'World Of Spectrum' está mal indicado.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+-- CharsExp v1.0 RC1 (27-julio-2024) --							     -- Por Saúl Saborido (sulas) --
+----------------------------------------------------------------------------------------------------------------------------

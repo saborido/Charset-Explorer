@@ -1,0 +1,17 @@
+----------------------------------------------------------------------------------------------------------------------------
+-- Charset Explorer v1.0 RC1 (7-27-2024) --										  --
+----------------------------------------------------------------------------------------------------------------------------
+
+						How to load the BASIC program
+						-----------------------------
+
+  Open an emulator and select the Spectrum model you want.
+
+  Take the "charsetxp_rc1.tap" tape and load it like any normal program with LOAD "".
+
+  Do a RUN, the first time it will wait for the "d_chars" binary to load. This file is in the "d_chars.tap" tape.
+
+  The next times you do RUN, the "d_chars" file will no longer be loaded because it will already be in memory, and protected
+  with a CLEAR.
+
+  In BASIC the program runs quite slow, I recommend increasing the emulator speed until you find it reasonable.
