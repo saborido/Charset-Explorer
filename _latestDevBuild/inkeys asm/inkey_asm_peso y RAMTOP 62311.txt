@@ -1,0 +1,20 @@
+inkey_locations	152 bytes	empieza en 62312
+inkey_main	257 bytes	empieza en 62464
+inkey_edit	156 bytes	empieza en 62721
+inkey_save	 84 bytes	empieza en 62877
+_________________________
+
+TOTAL:		649 bytes
+
+En verdad son 656 bytes en el tape de d_chars.tap hasta 65368 (udg A), y ahora empieza en 62312 y pesa 3056
+
+el RAMTOP en este caso es CLEAR 62311
+
+---------------------------------------------
+
+Total programa + asm y charsets: 31.839 bytes
+
+713 bytes ahorrados en asm y datos respecto a la RC1
+
+1361 bytes ahorrados en BASIC respecto a la RC1
+
