@@ -22,11 +22,12 @@ El tape "d_chars.tap" ahora empieza en 61936, y pesa 3662 bytes:
 				 ______
 		    d_chars.tap = 3662	bytes.
 
- ----------------------------------------------------------
+ -----------------------------------------------------------------------------
 
-	Total programa + asm y charsets: --.--- bytes.
+Total programa + asm y charsets: 27.731 + 3.662 = 31.393 bytes (en RC1: 30159 + 2393 = 32.552 bytes).
 
-	--- bytes ahorrados en la compilación respecto a la RC1.
+	Total BASIC: 33.036 bytes (en RC1: 34.739 bytes).
 
-	---- bytes ahorrados en BASIC respecto a la RC1.
+	1.159 bytes ahorrados en la compilación respecto a la RC1.
 
+	1.703 bytes ahorrados en BASIC respecto a la RC1.
