@@ -6,8 +6,8 @@ For create multiple charsets and change it with a RANDOMIZE USR, [Use this tool]
 
 ### This repository is in under construction, sorry for the mess...
 #### (this is my first repository ever, i'm trying to learn how this works...)
-
-		## [itch.io page link](https://saborido.itch.io/charsetexp)
+###
+		[itch.io page link](https://saborido.itch.io/charsetexp)
 
 ------------------------
 
