@@ -1,4 +1,5 @@
-	ORG 50000
+	;ORG 50000
+	ORG 61936
 
 MAIN	ld a, 2		;abrimos la pantalla superior
 	call 5633
@@ -7,16 +8,37 @@ STRNL	ld de, STRNG	;escribimos las flechas (^^^^^^^^)
 	ld bc, EOSTRNG-STRNG
 	call 8252
 
-	ld hl, 22748	;Coloreamos el bit 0 de amarillo
+	ld b, 5		;Coloreamos el texto
+	ld hl, 22711
+TEXCOL	ld (hl), 5
+	inc hl
+	djnz TEXCOL
+
+	ld b, 7		;Coloreamos los bit numbers
+	ld hl, 22741
+ROW_B	ld (hl), 66
+	inc hl
+	djnz ROW_B
+
+;	ld hl, 22748	;Coloreamos el bit 0 de amarillo
 	ld (hl), 70
 
 	ld b, 8		;Coloreamos las flechas
 	ld hl, 23029
-
 ARCOL	ld (hl), 66
 	inc hl
 	djnz ARCOL
 
+	ld b, 4		;Coloreamos los decimal values
+	ld hl, 23061
+ROW_D	ld (hl), 69
+	inc hl
+	ld (hl), 5
+	inc hl
+	djnz ROW_D
+	ld de, 24
+	add hl, de
+	ld (hl), 69
 
 ;Text lines:
 	

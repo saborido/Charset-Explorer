@@ -1,0 +1,143 @@
+Start									End
+line	Routine							Type	line	( =  ends on the same line)
+-----	-------							----	----
+
+1	BASIC temp line (not used when compiled)			=
+4	Compiler Directives						9
+10	Program Starts Here						=
+11	DEF fn Hex2Dec							=
+12	DEF fn Dec2Hex							=
+15	Read Hex						SUBR	=
+17	Read Inkey (MAYS)					SUBR	18
+18	|Read Inkey (noMAYS)					SUBR	=
+20	Upper Info Text						SUBR	=
+25	Posición de memoria actual (var 'd')			SUBR	=
+27	Resetear posición de memoria actual por usr"a"			=
+30	MH print Chars						SUBR	=
+35	Char Bytes Sum						SUBR	=
+36	Sprites Bar Print					SUBR	39
+
+40	Shared Edit/View Inkey						54
+
+55	Seamless Bkg Switch					SUBR	57
+58	Beep128							SUBR	=
+59	Beep48							SUBR	=
+60	CHARS system Variable					SUBR	=
+61	Change UDG system Variable				SUBR	=
+62	Reset UDG system Variable				SUBR	=
+63	Reset CHARS system Variable				SUBR	=
+65	Clear Screen				SUBR	=
+69	Swap CHARS system Variable		SUBR	=
+74	Edit Rot/Inv/Bkg Text			SUBR	=
+75	Sprites Mode Switch			SUBR	76
+77	|Sprites Clear				SUBR	=
+78	Edit Mode Bottom GUI			SUBR	=
+79	Sprites Text (Spr) Print		SUBR	=
+80	Original Char Before Modify Check	SUBR	82
+82	|Original Char Before Modify Save	SUBR	=
+84	Edit Draw&Del Text Print		SUBR	=
+85	Selected Char Frame Check		SUBR	86
+!86	|Selected Char Frame				=			(! = ¿?)
+
+esto va a volar --->	87	Dot&Square/0&1Binary Change UDG sv	SUBR	88
+
+88	|Dot&Square/0&1Binary			SUBR	=
+
+		Estas lineas REM fueron eliminadas del código original para liberar memoria:
+		---------------------------------------------------------------------------
+
+90	Edit Mode					-324-
+95	|Inkey Start
+124	|Edit Mode Reload char.				=
+125	|Cursor Movement				160
+165	|Pixel ON/OFF					166
+167	|Dot						=
+169	 Shared Routine				SUBR	=
+170	|Reset Draw&Del
+205	|Exit Edit					207
+210	|Old Pixel Set					219
+220	|XDraw ON/OFF					222
+225	|KeyX (Draw)					=
+227	|Key0 (Del)
+230	 Move Char (6,7)			SUBR	237
+240	 Move Char (9,8)			SUBR	248
+246	 Refresh Modified Char & Bars		SUBR	248
+247	 Refresh Char & Bars			SUBR	248
+249	Shared Routine				SUBR	=
+250	 SInvert Char				SUBR	=
+255	 Flip Char				SUBR	270
+280	 Rotate Char				SUBR	295
+!290	 |Write Result
+300	|Seamless Background			SUBR	=
+315	|Draw Cursor				SUBR	=
+316	|Prin tOld (DelCursor)			SUBR	=
+319	|Keys O,P					324
+
+330	Typewriter				SUBR	405
+
+410	Save Marks					485
+!410	|Mark Init (m)					---
+!430	|Mark End (M)					---
+440	|Marks Print				SUBR	449
+450	|Marks Read				SUBR
+
+525	Zero Value					=
+530	Displacement					575
+580	Selection Move					589
+588	|Selection Bar				SUBR	589
+!595	Reload Char
+610	Main Inkey					742
+760	UDG Info Bar				SUBR	779
+780	Clear UDG bar				SUBR	785
+810	Quit Prog					=
+820	Check Area				SUBR	1027
+!1000	|Position Bar					=
+1030	Draw Char Grid				SUBR	1070
+1080	Edit Mode Refresh Pos&UDG_bars		SUBR	1090
+
+1250	2Hex					SUBR	=
+1300	Swap Dec/Hex					1305
+1430	Useful Locations Menu				1660
+
+1690	Copy Byte				SUBR	1786
+1800	|V_Paste				SUBR	=
+1810	Copy Char				SUBR	1910
+!1870	|Print Copied Char				=
+1930	Copy Format				SUBR	1960
+1980	Paste						2135
+2150	Clear Clipboard					2200
+2220	Grid Colour				SUBR	2233
+2235	Grid Ink Colour					2238
+2240	Grid Dots Colour				2245
+2260	GUI bottom				SUBR	2285
+2280	GUI bottom text				SUBR	2285
+2320	GUI upper & HandIcon			SUBR	=
+
+2500	Save/Load Menu					3395
+2570	|1-UDG						=
+2580	|2-MH CharSets					=
+2590	|3-One MH CharSet				=
+2610	|4-From Marks					2627
+2650	|5-From Custom Range				2665
+2690	|6-Save ComplProg/Load File from Header		=
+-------
+2775	|Set Adress&exit				=
+3490	|Shared negation beep				=
+
+3500	Copy Large Data					3695
+7175	|Sure? Edit Check Block			SUBR	7177
+7180	|Sure? prompt				SUBR	7186
+7190	Delete Char					7216
+7220	Value Input					7240
+7250	Address Input					7290
+		7330	Binary Array				SUBR	7340
+7370	Binary GUI				SUBR	7395
+7450	MicroHobby CharSets				7495
+
+7600	Border Black Colour				7690
+
+8990	Draw Box				SUBR	=
+9000	Main Start					9030
+9030	Check 48/128k Model				9090
+9100	Setup						=
+9150	Draw User Interface			

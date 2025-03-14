@@ -1,5 +1,6 @@
 	ORG 50000
-	ld a, 2
+
+MAIN	ld a, 2		;abrimos la pantalla superior
 	call 5633
 	
 	ld hl, GRID+1
@@ -15,6 +16,8 @@ LOOP	ld de, GRID
 	cp 15
 	jr nz, LOOP
 	ld hl, GRID+1
-	ret
+
+	ret	;Salimos de la rutina
+
 GRID	defb 22, 7, 21, 19, 8, "........"
 EOGRID	equ $

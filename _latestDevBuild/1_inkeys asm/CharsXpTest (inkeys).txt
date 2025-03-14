@@ -1,0 +1,8 @@
+1. Se han pasado a ensamblador parte de los inkey$ de los menús.
+
+ Se han usado estas 4 rutnas de asm:
+
+	inkey_edit.asm
+	inkey_locarions.asm
+	inkey_main.asm
+	inkey_save.asm

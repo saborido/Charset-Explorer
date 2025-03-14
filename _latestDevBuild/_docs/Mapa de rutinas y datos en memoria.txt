@@ -1,0 +1,80 @@
+-Charset Explorer RC2 (pasando BASIC a ensamblador...) - Archivo "d_chars.tap"-
+
+			> Mapa de rutinas y datos en memoria <		(R = Rutina asm)
+			 ------------------------------------
+
+>Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 61705
+												>Tamaño
+	-- DATOS ESTÁTICOS (RUTINAS ASM) --					RAMTOP:		d_chars:
+										-------		--------
+
+R:-|61706-61935: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 61705		  3662
+R:-|61936-62311: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.	 61935		  3432
+R:-|62312-62463: Rutina inkey_locations.    -- PROBANDO --	-- 152 bytes.	 62311		  3056
+R:-|62464-62720: Rutina inkey_main.	    -- PROBANDO --	-- 257 bytes.
+R:-|62721-62876: Rutina inkey_edit.	    -- PROBANDO --	-- 156 bytes.
+R:-|62877-62960: Rutina inkey_save.	    -- PROBANDO --	--  84 bytes.
+
+	------------------------> HASTA AQUÍ DATOS ESTÁTICOS (RUTINAS ASM) <------------------------
+
+
+ 	------------------< DATOS DINÁMICOS (VARIABLES, DATOS DEL PROGRAMA, ETC.) >-----------------
+												>Tamaño
+										RAMTOP:		d_chars:
+ -> Total de bytes dinámicos: 78 bytes (de 62961 hasta 63038 incluidos).	-------		--------
+
+
+|62961-62968:		---- MEMORIA LIBRE ----			--   8 bytes.
+
+|62969: Modo Binario Off (0) / On (1).				--   1 byte.	 62967		  2393
+|62970: Color del fondo de la rejilla.				--   1 byte.	   "		    "
+|62971: Color de los puntos del fondo de la rejilla + 1.	--   1 byte.	   "		    "
+|62972: Color de la tinta de la rejilla + 1.			--   1 byte.	   "		    "
+|62973-: Posición de dirección actual (variable "d").		--   2 bytes.	   "		    "
+ \-62974:  " (dir. 16 bit).
+
+R:-|62975-62983: Rutina múltiplo de 32 (de vicentecno).		--   9 bytes.	 62967		   2393
+
+|62984-: Posición cursor inicio save/load. Múltiplo32 dir.	--   2 bytes.
+ \-62985:  " (dir. 16 bit).
+|62986-: Longitud de grabación/custom.				--   2 bytes.
+ \-62987:  " (dir. 16 bit).
+|62988-: Marca inicio de selección/grabación.			--   2 bytes.
+ \-62989:  " (dir. 16 bit).
+|62990-: Marca final de selección/grabación.			--   2 bytes.
+ \-62991:  " (dir. 16 bit).
+
+				    --< Iconos fijos >--
+
+|62992-62999: Icono Pixel ON (el cuadrado).			--   8 bytes.
+|63000-63007: Icono del candado.				--   8 bytes.
+|63008-63015: Icono triángulo de las bandas de colores.		--   8 bytes.
+|63016-63023: Icono de la mano solar.				--   8 bytes.
+
+				--> Fin de Iconos fijos <--
+
+|63024-63031: Guardar charset en edición.			--   8 bytes.
+
+|63032: Guardar variable del sistema CHARS actual.		--   2 bytes.
+ \-63033:  " (dir. 16 bit).
+|63034: Activador de la barra de UDG's.				--   1 byte.
+|63035: Guardar color del borde de la pantalla.			--   1 byte.
+|63036: Guardar en Tape(1), Disk(2), RAM(3).			--   1 byte.
+|63037: Modo de guardado/carga. Load(0), Save(1), !Verify(2).	--   1 byte.
+|63038: Variable del modo de grabación.				--   1 byte.
+
+	------------> HASTA AQUÍ DATOS DINÁMICOS (VARIABLES, DATOS DEL PROGRAMA, ETC.) <------------
+
+
+	--------------------< MÁS DATOS ESTÁTICOS (MICROHOBBY CHARSETS AREA) >--------------------
+
+R:|63039-63063: Rutina MicroHobby CharSets.
+  |
+  \----| R:|63039-: Select ROM CharSet.				--   5 bytes.
+   |---| R:|-63044-: Select MH CharSet 1.			--   5 bytes.
+   |---| R:|-63049-: Select MH CharSet 2.			--   5 bytes.
+    \--| R:|-63054: Select MH CharSet 3.			--  10 bytes.
+
+|63064-63831: MicroHobby CharSet area 1.			-- 768 bytes.
+|63832-64599: MicroHobby CharSet area 2.			-- 768 bytes.
+|64600-65367: MicroHobby CharSet area 3.			-- 768 bytes.

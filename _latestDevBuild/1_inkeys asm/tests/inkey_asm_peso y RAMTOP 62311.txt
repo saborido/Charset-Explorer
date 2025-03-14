@@ -1,7 +1,7 @@
 inkey_locations	152 bytes	empieza en 62312
 inkey_main	257 bytes	empieza en 62464
 inkey_edit	156 bytes	empieza en 62721
-inkey_save	 84 bytes	empieza en 62877
+inkey_save	 84 bytes	empieza en 62877 y acaba en 62961
 _________________________
 
 TOTAL:		649 bytes
