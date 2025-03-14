@@ -1,4 +1,4 @@
-## -Charset Explorer pre RC2 (pasando BASIC a ensamblador...) -
+## -Charset Explorer pre RC2 (pasando BASIC a ensamblador...)-
 
 Pasando rutinas del programa BASIC a ensamblador, para recuperar espacio tanto en el programa BASIC
 como en el compilado resultante, y ganar velocidad de ejecución en partes clave (como el dibujado
