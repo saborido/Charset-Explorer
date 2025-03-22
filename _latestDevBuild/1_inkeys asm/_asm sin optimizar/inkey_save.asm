@@ -1,5 +1,4 @@
-
-;los números de línea a los que se hace referencia son los
+;Los números de línea a los que se hace referencia son los
 ;del listado BASIC al que va a reemplazar este código asm,
 ;que es el código de la RC 1
 

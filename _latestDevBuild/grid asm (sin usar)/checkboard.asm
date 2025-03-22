@@ -6,8 +6,8 @@
 ;hacer el checkerboard modificando el atributo BRIGHT
 ;en una cuadrícula de 8x8
 
-	;ORG 50000
-	ORG 62262
+	ORG 50000
+	;ORG 62262
 
 MAIN	ld a, 71
 	ld bc,(_PAPER)
