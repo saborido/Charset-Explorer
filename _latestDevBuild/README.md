@@ -8,12 +8,12 @@ de la rejilla).
 >Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 62021
 
 	-- DATOS ESTÁTICOS (RUTINAS ASM) --                    Tamaño:      RAMTOP:      d_chars:
-                                                            -------      -------      --------
+                                                           -------      -------      --------
 
-R:-|62022-62251: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 62021		 939 bytes.
-R:-|62252-62627: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.
+R:-|62022-62251: Rutina char2grid.      -- PROBANDO --  -- 230 bytes.    62021       939 bytes.
+R:-|62252-62627: Rutina bin_text.       -- PROBANDO --  -- 376 bytes.
 
-R:-|62628-62960: Rutinas inkeys.asm	    -- PROBANDO --	-- 333 bytes.
+R:-|62628-62960: Rutinas inkeys.asm     -- PROBANDO --  -- 333 bytes.
    |
     \>USR 62628: Rutina inley_save
     |>USR 62638: Rutina inkey_edit
