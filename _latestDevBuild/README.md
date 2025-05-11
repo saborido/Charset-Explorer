@@ -7,7 +7,7 @@ de la rejilla).
 ```
 >Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 62021
 
-	-- DATOS ESTÁTICOS (RUTINAS ASM) --                    Tamaño:      RAMTOP:      d_chars:
+    -- DATOS ESTÁTICOS (RUTINAS ASM) --                    Tamaño:      RAMTOP:      d_chars:
                                                            -------      -------      --------
 
 R:-|62022-62251: Rutina char2grid.      -- PROBANDO --  -- 230 bytes.    62021       939 bytes.
