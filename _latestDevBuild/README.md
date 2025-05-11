@@ -5,15 +5,18 @@ como en el compilado resultante, y ganar velocidad de ejecución en partes clave
 de la rejilla).
 
 ```
->Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 61705
-												>Tamaño
-	-- DATOS ESTÁTICOS (RUTINAS ASM) --					RAMTOP:		d_chars:
-										-------		--------
+>Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 62021
 
-R:-|61706-61935: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 61705		  3662
-R:-|61936-62311: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.	 61935		  3432
-R:-|62312-62463: Rutina inkey_locations.    -- PROBANDO --	-- 152 bytes.	 62311		  3056
-R:-|62464-62720: Rutina inkey_main.	    -- PROBANDO --	-- 257 bytes.
-R:-|62721-62876: Rutina inkey_edit.	    -- PROBANDO --	-- 156 bytes.
-R:-|62877-62960: Rutina inkey_save.	    -- PROBANDO --	--  84 bytes.
+	-- DATOS ESTÁTICOS (RUTINAS ASM) --                    Tamaño:      RAMTOP:      d_chars:
+                                                           -------      -------      --------
+
+R:-|62022-62251: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 62021		 939 bytes.
+R:-|62252-62627: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.
+
+R:-|62628-62960: Rutinas inkeys.asm	    -- PROBANDO --	-- 333 bytes.
+   |
+    \>USR 62628: Rutina inley_save
+    |>USR 62638: Rutina inkey_edit
+    |>USR 62648: Rutina inkey_main
+    |>USR 62658: Rutina inkey_locations
 ```
