@@ -23,10 +23,10 @@ MAIN
 	jr z, END_	;Si coincide, saltamos a JUMP_.
 
 	inc hl		;Incrementamos KEYS_ (HL).
-	inc de		;Incrementamos LINES_ (DE) dos veces, porque guarda valores
+	inc de		;Incrementamos LINES_ (DE) dos veces, porque guardamos valores
 	inc de		;de 2 bytes (16 bits).
 
-	djnz MAIN	;Hacemos un loop para comprobar todas las teclas (son 10).
+	djnz MAIN	;Comprobamos todas las teclas.
 
 	ld bc, 0	;El resulado es 0 si no encuentra
 	ret		;ninguna tecla y salimos de la rutina.

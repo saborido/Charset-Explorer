@@ -1,0 +1,34 @@
+-Charset Explorer RC2 - Pasando BASIC a ensamblador... -
+
+		--------> El RAMTOP en este caso es CLEAR 62021 <--------
+
+char2grid	230 bytes	empieza en 62022  --> Testicular esto muy fuertemente, que
+bin_text	376 bytes	empieza en 62252  --> se han hecho muchos cambios...
+
+inkeys.asm:	333 bytes	empieza en 62628
+	__________________________
+	TOTAL: 1255 bytes más de ensamblador respecto a la RC1.
+
+  inkey_save			empieza en 62628
+  inkey_edit			empieza en 62638
+  inkey_main			empieza en 62648
+  inkey_locations		empieza en 62658 y acaba en 62960 (inclusives)
+
+El tape "d_chars.tap" ahora empieza en 62022, y pesa 3346 bytes:
+
+				   333  bytes de inkeys.asm
+				+  376  bytes de bin_text
+				+  230  bytes de char2grid
+				+ 2407  bytes del resto
+				 ______
+		    d_chars.tap = 3346  bytes.
+
+ -----------------------------------------------------------------------------
+
+Total compilado + d_chars.tap: 27.731 + 3.346 = 31.077 bytes (en RC1: 30159 + 2393 = 32.552 bytes).
+
+Total BASIC: 33.028 bytes (en RC1: 34.739 bytes).
+
+	1.475 bytes ahorrados en la compilación respecto a la RC1.
+
+	1.711 bytes ahorrados en BASIC respecto a la RC1.

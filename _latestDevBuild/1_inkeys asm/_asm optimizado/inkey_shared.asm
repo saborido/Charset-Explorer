@@ -18,7 +18,7 @@
 ;de telegram por la ayuda.
 
 MAIN
-	ex de, hl	;Esto conmuta los registros DE y HL.
+	ex de, hl
 	ld c, (hl)
 	inc hl
 	ld b, (hl)

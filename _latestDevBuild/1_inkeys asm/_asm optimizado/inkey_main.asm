@@ -20,18 +20,18 @@ LOOP_
 	cp (hl)		;La comparamos con KEY_ (registro HL).
 	jp z, END_	;Si coincide, saltamos a JUMP_.
 
-	inc hl		;Incrementamos KEY_ (HL), que guarda valores de 1 byte (8 bits).
-	inc de		;Incrementamos LINE_ (DE) dos veces, porque guarda valores
-	inc de		;de 2 bytes (16 bit), y la instrucción INC incrementa sólo 1 byte.
+	inc hl		;Incrementamos KEY_ (HL).
+	inc de		;Incrementamos LINE_ (DE) dos veces, porque guardamos valores
+	inc de		;de 2 bytes (16 bits).
 
-	djnz LOOP_	;Hacemos un loop para comprobar todas las teclas.
+	djnz LOOP_	;Comprobamos todas las teclas.
 
 	ld bc, 0	;El resulado es 0 si no encuentra
 	ret		;ninguna tecla y salimos de la rutina.
 
 ;Labels y datos:
 
-KEY_	db "o",8, "p",9, "s",10, "w",11, "KIOPikqWaSldALhrbBR/:", 96, "+G.mMQ"
+KEY_	db  "o",8, "p",9,  "s",10, "w",11, "K","I","O","P","i","k","q","W","a","S", "l", "d", "A", "L", "h","r","b","B","R","/", ":", 96,  "+", "G",".","m","M","Q"
 LINE_	dw 570,570,575,575,580,580,583,583,531,530,540,545,536,533,565,560,555,550,1430,7250,2500,2500,1300,590,14,7450,27,3500,3500,3500,2235,2240,480,410,430,810
 
 LAST_K	equ 23560	;Variable del sistema LAST_K

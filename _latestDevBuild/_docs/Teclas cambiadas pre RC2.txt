@@ -1,0 +1,20 @@
+=== Charset Explorer pre RC2 ===
+
+Teclas añadidas en el menú de Useful Locations:
+
+	A > Ahora apunta a la dir. 63448 (mitad del charset, letra P). Antes era 63824.
+	B > 	"	 dir. 64216 	"	. Antes era 64592.
+	C > 	"	 dir. 64984	"	. Antes era 65360.
+
+	-Las teclas 1, 2 y 3 se corresponden a las teclas A, B y C respectivamente.
+
+
+Teclas cambiadas en el MAIN menu:
+
+	CShift + B > Ahora conmuta el color del borde de la pantalla (negro/azul oscuro). Antes entraba al
+		     menú de MicroHobby Charset.
+
+	CShift + H > Ahora entra al menú de MicroHobby Charset. Antes cambiaba el color del borde de la pantalla.
+
+
+

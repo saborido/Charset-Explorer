@@ -12,14 +12,14 @@
 ;cargamos en HL la dirección de KEYS_,
 ;cargamos en DE la dirección de LINES_,
 
-	ORG 62628
+	;ORG 62628
 
 ;----------------- Rutinas principales [40 bytes] -----------------;
 
-MAIN
+;MAIN
 
 ;=== RUTINA INKEY_SAVE [USR 62628] === 0 bytes (ORG +0).
-	ld b, 10
+	ld b, 10        ;Cargamos el número de elementos en la tabla.
 	ld hl, SAVEK_
 	ld de, SAVEL_
 	jr LOOP_
@@ -85,16 +85,16 @@ SAVEK_	db "rwmt12456Q" ;10 teclas.
 SAVEL_	dw 2740, 2740, 2783, 2750, 2570, 2580, 2610, 2650, 2690, 805
 
 ;81 bytes de datos del EDIT menu:
-EDITK_	db "ao6",8,"dp7",9,"ec","w9",11,"qz","s8",10,"OP","Rb",13,"EQ+G" ;27 teclas
+EDITK_	db "ao6",8,"dp7",9,"ecw9",11,"qzs8",10,"OPRb",13,"EQ+G" ;27 teclas
 EDITL_	dw 125,125,125,125,130,130,130,130,145,145,135,135,135,150,150,140,140,140,319,319,124,318,201,203,810,2235,2240
 
 ;108 bytes de datos del MAIN menu:
-MAINK_	db "o",8,"p",9,"s",10,"w",11,"KIOPikqWaSldALhrbBR/:",96,"+G.mMQ" ;36 teclas
+MAINK_	db "o",8,"p",9,"s",10,"w",11,"KIOPikqWaSldALhrbHR/:",96,"+G.mMQ" ;36 teclas
 MAINL_	dw 570,570,575,575,580,580,583,583,531,530,540,545,536,533,565,560,555,550,1430,7250,2500,2500,1300,590,14,7450,27,3500,3500,3500,2235,2240,480,410,430,810
 
 ;54 bytes de datos de Useful Locations menu:
 LOCATK_	db "urRaAbBcC123456789" ;18 teclas.
-LOCATA_	dw 65368,15616,16376,63064,63824,63832,64592,64600,65360,16384,18432,20480,22528,23296,25200,56000,62968,63040 ;En este caso se devuelve una dirección de memoria.
+LOCATA_	dw 65368,15616,16136,63064,63584,63832,64352,64600,65120,16384,18432,20480,22528,23296,25200,53000,62016,62960 ;En este caso se devuelve una dirección de memoria.
 
 ;<=== Labels ===>
 

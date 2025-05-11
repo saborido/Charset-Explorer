@@ -1,21 +1,22 @@
--Charset Explorer RC2 (pasando BASIC a ensamblador...) - Archivo "d_chars.tap"-
+-Charset Explorer RC2 (pasando BASIC a ensamblador...) - Archivo "d_chars.tap"- 3346 bytes en total -
 
 			> Mapa de rutinas y datos en memoria <		(R = Rutina asm)
 			 ------------------------------------
 
->Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 61705
+>Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 62021
 												>Tamaño
-	---------------- DATOS ESTÁTICOS (RUTINAS ASM) ----------------		RAMTOP:		d_chars:
-										-------		--------
+	---------------- DATOS ESTÁTICOS (RUTINAS ASM) ----------------		RAMTOP:		 bloque:
+										-------		 -------
 
-R:-|61706-61935: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 61705		  3662
-R:-|61936-62311: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.	 61935		  3432
+R:-|62022-62251: Rutina char2grid.	    -- PROBANDO --	-- 230 bytes.	 62021		 939 bytes.
+R:-|62252-62627: Rutina bin_text.	    -- PROBANDO --	-- 376 bytes.
 
-R:-|62628-62960: Rutina inkeys.asm	    -- PROBANDO --	-- 333 bytes.	 62627		  ????
-    \>USR 62648: Rutina inley_save
-    |>USR 62658: Rutina inkey_edit
-    |>USR 62668: Rutina inkey_main
-    |>USR 62678: Rutina inkey_locations
+R:-|62628-62960: Rutinas inkeys.asm	    -- PROBANDO --	-- 333 bytes.
+   |
+    \>USR 62628: Rutina inley_save
+    |>USR 62638: Rutina inkey_edit
+    |>USR 62648: Rutina inkey_main
+    |>USR 62658: Rutina inkey_locations
 
 
 	------------------------> HASTA AQUÍ DATOS ESTÁTICOS (RUTINAS ASM) <------------------------
@@ -24,20 +25,20 @@ R:-|62628-62960: Rutina inkeys.asm	    -- PROBANDO --	-- 333 bytes.	 62627		  ??
 
  	------------------< DATOS DINÁMICOS (VARIABLES, DATOS DEL PROGRAMA, ETC.) >-----------------
 												>Tamaño
-										RAMTOP:		d_chars:
- -> Total de bytes dinámicos: 78 bytes (de 62961 hasta 63038 incluidos).	-------		--------
+												 bloque:
+ -> Total de bytes dinámicos: 78 bytes (de 62961 hasta 63038 incluidos).			 -------
 
 
 |62961-62968:		---- MEMORIA LIBRE ----			--   8 bytes.
 
-|62969: Modo Binario Off (0) / On (1).				--   1 byte.	 62967		  2393
-|62970: Color del fondo de la rejilla.				--   1 byte.	   "		    "
-|62971: Color de los puntos del fondo de la rejilla + 1.	--   1 byte.	   "		    "
-|62972: Color de la tinta de la rejilla + 1.			--   1 byte.	   "		    "
-|62973-: Posición de dirección actual (variable "d").		--   2 bytes.	   "		    "
+|62969: Modo Binario Off (0) / On (1).				--   1 byte.	 		  78 bytes.
+|62970: Color del fondo de la rejilla.				--   1 byte.
+|62971: Color de los puntos del fondo de la rejilla + 1.	--   1 byte.
+|62972: Color de la tinta de la rejilla + 1.			--   1 byte.
+|62973-: Posición de dirección actual (variable "d").		--   2 bytes.
  \-62974:  " (dir. 16 bit).
 
-R:-|62975-62983: Rutina múltiplo de 32 (de vicentecno).		--   9 bytes.	 62967		   2393
+R:-|62975-62983: Rutina múltiplo de 32 (de vicentecno).		--   9 bytes.
 
 |62984-: Posición cursor inicio save/load. Múltiplo32 dir.	--   2 bytes.
  \-62985:  " (dir. 16 bit).
@@ -71,10 +72,11 @@ R:-|62975-62983: Rutina múltiplo de 32 (de vicentecno).		--   9 bytes.	 62967		
 
 
 	--------------------< MÁS DATOS ESTÁTICOS (MICROHOBBY CHARSETS AREA) >--------------------
-
-R:|63039-63063: Rutina MicroHobby CharSets.
+												>Tamaño
+												 bloque:
+R:|63039-63063: Rutina MicroHobby CharSets.							--------
   |
-  \----| R:|63039-: Select ROM CharSet.				--   5 bytes.
+  \----| R:|63039-: Select ROM CharSet.				--   5 bytes.			2329 bytes.
    |---| R:|-63044-: Select MH CharSet 1.			--   5 bytes.
    |---| R:|-63049-: Select MH CharSet 2.			--   5 bytes.
     \--| R:|-63054: Select MH CharSet 3.			--  10 bytes.
@@ -82,3 +84,5 @@ R:|63039-63063: Rutina MicroHobby CharSets.
 |63064-63831: MicroHobby CharSet area 1.			-- 768 bytes.
 |63832-64599: MicroHobby CharSet area 2.			-- 768 bytes.
 |64600-65367: MicroHobby CharSet area 3.			-- 768 bytes.
+												---------
+											 TOTAL:  3346 bytes.
