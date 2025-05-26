@@ -1,12 +1,12 @@
-;Rutina para dibujar un carácter alojado en una
+;Rutina para dibujar un carácter alojado en una     -230 bytes
 ;posición de memoria en un grid de 8x8 chars.
 
 ;Primero cubrimos la rejilla con pixeles vacíos para
 ;borrar lo que ya hubiese, y luego dibujamos los
 ;píxeles sobre ella.
 
-	;ORG 61706
-	ORG 62022
+	ORG 50000
+	;ORG 62022
 
 MAIN
 	ld a, 2		;Abrimos la pantalla superior
@@ -59,7 +59,7 @@ LOOPB
 
 ;DOTted grid (si el modo BIN esta OFF):
 
-BINOFF
+BINOFF:
 	ld hl, GRID+1
 	ld (hl), 7
 
@@ -79,7 +79,7 @@ LOOPA
 
 ;Configuramos el color de los píxeles ON:
 
-JUMP
+JUMP:
 	ld a, 16
 	rst 16
 
@@ -102,12 +102,12 @@ JUMP
 LOOPF
 	ld b, 8	;Loop de 8 rotaciones (left).
 
-CHR_LD
+CHR_LD:
 	bit 7, (hl)	;comprobamos el bit 7 del byte
 	jr z, DRW_ZRO	;si el flag Z es 0, se pasa de dibujar nada
 	call nz, DRW_BIT ;si es un 1, dibujamos el pixel
 
-JMP_ZRO
+JMP_ZRO:
 	rlc (hl)	;Rotamos hacia la izquierda.
 	djnz CHR_LD	;Volvemos a comprobar...
 
@@ -132,11 +132,11 @@ JMP_ZRO
 
 ;;-------------------- Subrutinas --------------------;
 
-DRW_ZRO
+DRW_ZRO:
 	call X_INC	;incrementamos el eje x
 	jr JMP_ZRO	;Volvemos a la rutina principal.
 
-DRW_BIT
+DRW_BIT:
 	call POS_SCR	;Nos posicionamos en la rejilla.
 
 	push bc
@@ -153,27 +153,27 @@ DRW_BIT
 
 ;Modo Binario, imprime unos:
 
-JMP_BIN
+JMP_BIN:
 	ld a, "1"
 	rst 16
 
 ;Aquí hay que llamar a la rutina X_INC y después hacer
 ;un RET, pero como la tenemos a continuación...
 
-X_INC
+X_INC:
 	ld a, (POS_STR+2)	;incrementamos el
 	inc a			;eje x.
 	ld (POS_STR+2), a
 
 	ret	;Volvemos a la rutina principal.
 
-BIN_CHK
+BIN_CHK:
 	ld a, (BINMOD_)	;Bin mode is on?
 	cp 0
 
 	ret	;Volvemos a la rutina principal.
 
-POS_SCR
+POS_SCR:
 	ld a, 22	;Comando AT (de PRINT AT)
 	rst 16
 	ld a, (POS_STR+1)	;eje y

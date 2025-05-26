@@ -14,9 +14,9 @@
 
 	;ORG 62628
 
-;MAIN
+;----------------- Rutinas principales [40 bytes] -----------------;
 
-;----------------- Rutinas principales [40 + 10 bytes] -----------------;
+;MAIN
 
 ;=== RUTINA INKEY_SAVE [USR 62628] === 0 bytes (ORG +0).
 	ld b, 10        ;Cargamos el número de elementos en la tabla.
@@ -40,13 +40,6 @@
 	ld b, 18
 	ld hl, LOCATK_
 	ld de, LOCATA_
-	jr LOOP_
-
-;=== RUTINA MicroHobby Charsets [USR 62668] === +10 bytes (ORG +40).
-RUTINA_MH:
-	ld b, 6
-	ld hl, HOBBYK_
-	ld de, HOBBYU_
 	jr LOOP_
 
 ;------------------- FIN de rutinas principales -------------------;
@@ -85,7 +78,7 @@ END_:
 
 ;------------------- FIN de subrutina compartida -------------------;
 
-;--------------- Datos (teclas y líneas) [273 + 18 bytes] ---------------;
+;--------------- Datos (teclas y líneas) [273 bytes] ---------------;
 
 ;30 bytes de datos del SAVE menu:
 SAVEK_	db "rwmt12456Q" ;10 teclas.
@@ -103,11 +96,6 @@ MAINL_	dw 570,570,575,575,580,580,583,583,531,530,540,545,536,533,565,560,555,55
 LOCATK_	db "urRaAbBcC123456789" ;18 teclas.
 LOCATA_	dw 65368,15616,16136,63064,63584,63832,64352,64600,65120,16384,18432,20480,22528,23296,25200,53000,62016,62960 ;En este caso se devuelve una dirección de memoria.
 
-;18 bytes de datos de MicroHobby charsets menu:
-HOBBYK_	db "a1b2c3" ;6 teclas.
-HOBBYU_	dw 63044,63044,63049,63049,63054,63054 ;En este caso se devuelven direcciones de rutinas.
-
 ;<=== Labels ===>
 
-ROM_CHR equ 63039   ;Charset de la ROM.
 LAST_K	equ 23560	;Variable del Sistema LAST_K.

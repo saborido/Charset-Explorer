@@ -1,6 +1,6 @@
 -Charset Explorer RC2 - Pasando BASIC a ensamblador... -
 
-		--------> El RAMTOP en este caso es CLEAR 62021 <--------
+		--------> El RAMTOP en este caso es CLEAR 61319 <--------
 
 char2grid	230 bytes	empieza en 62022  --> Testicular esto muy fuertemente, que
 bin_text	376 bytes	empieza en 62252  --> se han hecho muchos cambios...

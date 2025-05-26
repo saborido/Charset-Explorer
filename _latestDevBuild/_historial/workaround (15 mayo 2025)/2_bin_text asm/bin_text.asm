@@ -1,22 +1,27 @@
-	;ORG 61936
-    ORG 62252
+;===> Charset Explorer pre RC2 <===> 'bin_text.asm' v3 (376 bytes) <===
 
-MAIN	ld a, 2		;abrimos la pantalla superior
+    ;ORG 62252
+
+;MAIN
+	ld a, 2		;abrimos la pantalla superior
 	call 5633
 
-STRNL	ld de, STRNG	;escribimos las flechas (^^^^^^^^)
-	ld bc, EOSTRNG-STRNG
+STRNL
+	ld de, STRNG	;escribimos las flechas (^^^^^^^^)
+	ld bc, 11
 	call 8252
 
 	ld b, 5		;Coloreamos el texto
 	ld hl, 22711
-TEXCOL	ld (hl), 5
+TEXCOL
+	ld (hl), 5
 	inc hl
 	djnz TEXCOL
 
 	ld b, 7		;Coloreamos los bit numbers
 	ld hl, 22741
-ROW_B	ld (hl), 66
+ROW_B
+	ld (hl), 66
 	inc hl
 	djnz ROW_B
 
@@ -25,13 +30,15 @@ ROW_B	ld (hl), 66
 
 	ld b, 8		;Coloreamos las flechas
 	ld hl, 23029
-ARCOL	ld (hl), 66
+ARCOL
+	ld (hl), 66
 	inc hl
 	djnz ARCOL
 
 	ld b, 4		;Coloreamos los decimal values
 	ld hl, 23061
-ROW_D	ld (hl), 69
+ROW_D
+	ld (hl), 69
 	inc hl
 	ld (hl), 5
 	inc hl
@@ -169,5 +176,3 @@ D_8	db 84,124,92,112
 ;Arrows:
 
 STRNG	db 22, 15, 21, "^^^^^^^^"
-EOSTRNG	equ $
-

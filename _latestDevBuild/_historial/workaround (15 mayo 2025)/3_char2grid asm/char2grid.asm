@@ -5,9 +5,10 @@
 ;hexadecimal), juntoo a una evaluación del tipo de dato que contiene cada una de las direccioones
 ;de memoria del char.
 
-	;ORG 61320
+	;ORG 62022
+    ORG 50000
 
-;MAIN
+MAIN
 
     ld a, 2		        ;Abrimos la pantalla superior.
     call 5633

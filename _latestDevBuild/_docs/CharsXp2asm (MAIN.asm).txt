@@ -1,0 +1,9 @@
+1. Se han pasado a ensamblador parte de los inkey$ de los menús. Se han juntado las 4 rutinas de
+   inkey en una sola, 'inkeys.asm'.
+
+2. Se ha eliminado el GUI del modo Binario del BASIC, y se ha implementado en ensamblador en la
+   rutina 'bin_text.asm'.
+
+3. Se ha eliminado del BASIC el dibujado de la rejilla, implementándolo en ensamblador. Se han hecho
+   cambios bastante drásticos en la parte BASIC, así que hay que probarlo extensamente antes de
+   implementar más cosas en asm. En la rutina 'char2grid.asm'.
