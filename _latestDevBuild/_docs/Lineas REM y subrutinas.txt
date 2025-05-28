@@ -12,8 +12,8 @@ line	Routine							Type	line	( =  ends on the same line)
 18	|Read Inkey (noMAYS)					SUBR	=
 20	Upper Info Text						SUBR	=
 25	Posición de memoria actual (var 'd')			SUBR	=
-27	Resetear posición de memoria actual por usr"a"			=
-30	MH print Chars						SUBR	=
+27	Resetear programa (restart)					=
+
 35	Char Bytes Sum						SUBR	=
 36	Sprites Bar Print					SUBR	39
 

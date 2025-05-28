@@ -2,7 +2,7 @@
 
 ;MicroHobby charsets menu. Aquí seleccionamos un charset para probarlo.
 
-    ;ORG 61764
+    ;ORG 61736
 
 ;MAIN
 

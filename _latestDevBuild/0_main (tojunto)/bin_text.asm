@@ -1,6 +1,6 @@
 ;===> Charset Explorer pre RC2 <===> 'bin_text.asm' v3 (376 bytes) <===
 
-    ;ORG 62252
+    ;ORG 62224
 
 ;MAIN
 

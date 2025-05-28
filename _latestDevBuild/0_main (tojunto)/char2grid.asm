@@ -5,7 +5,7 @@
 ;hexadecimal), juntoo a una evaluación del tipo de dato que contiene cada una de las direccioones
 ;de memoria del char.
 
-	;ORG 61320
+	;ORG 61292
 
 ;MAIN
 

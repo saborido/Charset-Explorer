@@ -1,0 +1,16 @@
+
+ Línea:		Rutina:
+ ------		-------
+    36		-USR 62975 (módulo de 32)
+    63		-USR 63039 ('MHcharsets.asm', select ROM charset)
+    96		-USR 62610 ('inkeys.asm', inkey_edit)
+   610		-USR 62620 ('inkeys.asm', inkey_main)
+  1050		-USR 61292 ('char2grid.asm')
+  1430		-USR 60686 ('useful_loc.asm')
+  1550		-USR 62630 ('inkeys.asm', inkey_locations)
+  2515		-USR 62600 ('inkeys.asm', inkey_save)
+  7337		-USR 62224 ('bin_text.asm')
+  7450		-USR 61736 ('MHcharsets.asm')
+  7470		-USR ((c-49)*5+63044) ('inkeys.asm', select charset A-B-C, según selección pulsada)
+  8990		-USR 62224 ('bin_text.asm')
+

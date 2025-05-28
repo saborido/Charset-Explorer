@@ -1,4 +1,4 @@
-;===> Charset Explorer pre RC2 <===> 'inkeys.asm' v3 (333 bytes) <===
+;===> Charset Explorer pre RC2 <===> 'inkeys.asm' v3 (361 bytes) <===
 
 ;Esta rutina lee la tecla guardada en la variable del
 ;sistema LAST_K para comprobar si se han pulsado ciertas
@@ -7,51 +7,53 @@
 ;usaremos con un GO TO USR (dirección_de_la_rutina).
 
 ; Uso:
-
 ;Cargamos en B el número de teclas a comprobar,
 ;cargamos en HL la dirección de KEYS_,
 ;cargamos en DE la dirección de LINES_,
 
-	;ORG 62628
+	;ORG 62600
 
 ;MAIN
 
 ;----------------- Rutinas principales [40 + 10 bytes] -----------------;
 
-;=== RUTINA INKEY_SAVE [USR 62628] === 0 bytes (ORG +0).
-	ld b, 10        ;Cargamos el número de elementos en la tabla.
+
+;=== RUTINA INKEY_SAVE          [USR 62600] === 0 bytes (ORG +0).
+	ld b, 10
 	ld hl, SAVEK_
 	ld de, SAVEL_
 	jr LOOP_
 
-;=== RUTINA INKEY_EDIT [USR 62638] === +10 bytes (ORG +10).
+;=== RUTINA INKEY_EDIT          [USR 62610] === +10 bytes (ORG +10).
 	ld b, 27
 	ld hl, EDITK_
 	ld de, EDITL_
 	jr LOOP_
 
-;=== RUTINA INKEY_MAIN [USR 62648] === +10 bytes (ORG +20).
+;=== RUTINA INKEY_MAIN          [USR 62620] === +10 bytes (ORG +20).
 	ld b, 36
 	ld hl, MAINK_
 	ld de, MAINL_
 	jr LOOP_
 
-;=== RUTINA INKEY_LOCATIONS [USR 62658] === +10 bytes (ORG +30).
+;=== RUTINA INKEY_LOCATIONS     [USR 62630] === +10 bytes (ORG +30).
 	ld b, 18
 	ld hl, LOCATK_
 	ld de, LOCATA_
 	jr LOOP_
 
-;=== RUTINA MicroHobby Charsets [USR 62668] === +10 bytes (ORG +40).
-RUTINA_MH:
+;=== RUTINA INKEY_MHCharsets    [USR 62640] === +10 bytes (ORG +40).
 	ld b, 6
 	ld hl, HOBBYK_
 	ld de, HOBBYU_
 	jr LOOP_
 
+
 ;------------------- FIN de rutinas principales -------------------;
 
+
 ;---------------- Subrutina compartida [20 bytes] -----------------;
+
 
 LOOP_
 	ld a, (LAST_K)	;Cargamos en A la última tecla pulsada.
@@ -68,12 +70,10 @@ LOOP_
 	ret	;ninguna tecla y salimos de la rutina.
 
 ;Simulando "LD BC, (DE)":
-
 ;En esta parte de la rutina se carga en BC el valor contenido en
 ;LINES_ (DE) para que al volver al BASIC se pueda trabajar con el.
 
-;Muchas gracias al grupo de Ensamblador Z80
-;de telegram por la ayuda.
+;Muchas gracias al grupo de ensamblador Z80 de Telegram por la ayuda.
 
 END_:
 	ex de, hl	;Escribimos en BC el resultado
@@ -83,9 +83,12 @@ END_:
 
 	ret	;Salimos de la rutina y volvemos al BASIC.
 
+
 ;------------------- FIN de subrutina compartida -------------------;
 
+
 ;--------------- Datos (teclas y líneas) [273 + 18 bytes] ---------------;
+
 
 ;30 bytes de datos del SAVE menu:
 SAVEK_	db "rwmt12456Q" ;10 teclas.
@@ -107,7 +110,9 @@ LOCATA_	dw 65368,15616,16136,63064,63584,63832,64352,64600,65120,16384,18432,204
 HOBBYK_	db "a1b2c3" ;6 teclas.
 HOBBYU_	dw 63044,63044,63049,63049,63054,63054 ;En este caso se devuelven direcciones de rutinas.
 
+
 ;<=== Labels ===>
+
 
 ROM_CHR equ 63039   ;Charset de la ROM.
 LAST_K	equ 23560	;Variable del Sistema LAST_K.
