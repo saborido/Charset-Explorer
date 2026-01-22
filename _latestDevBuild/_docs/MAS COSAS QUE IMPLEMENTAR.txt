@@ -1,0 +1,3 @@
+1. Desplazar líneas solas (no todo el char).
+2. Implementar un MERGE (para mezclar chars o sprites).
+3. ¿Imprimir machine code de charset o sprites por la impresora?.

@@ -1,0 +1,7 @@
+Coordenadas de las direcciones de memoria (16 bit) y sus valores (8 bit):
+
+7,11-->********,***
+********,***<--15,19
+         ^
+         |
+         15,17

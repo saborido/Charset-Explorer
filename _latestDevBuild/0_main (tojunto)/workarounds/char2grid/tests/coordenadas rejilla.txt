@@ -1,0 +1,44 @@
+esquina superior izquierda:	 7,21
+esquina inferior derecha:	14,28
+
+
+las coordenadas de los numeros del Bit number son 6,21, el texto en si se pone encima, en 5,23
+las flechas de la parte de abajo de la rejilla están en 16,21
+las coordenadas de los valores decimales de los bits es 17,21
+
+
+El dibujo del texto de Bit number empieza en la dirección 16823,202
+
+El color de la tinta es Cyan, paper Black, sin brillo (creo):
+
+				16823,202					16826,64
+				17079,163	17080,25	17081,94	17082,66	17083,96
+				17335,202	17336,21	17337,85	17338,103	17339,72
+				17591,170	17592,21	17593,85	17594,84	17595,64
+				17847,201	17848,20	17849,209	17850,99	17851,72
+
+Los numeros son en Red, con brillo, paper Black (el cero en Yellow):
+
+ siete		  seis		  cinco		 cuatro		  tres		  dos		  uno		 cero
+
+16597,56	16598,56	16599,56	16600,40	16601,56	16602,56	16603,48	16604,56
+16853,8		16854,32	16855,32	16856,40	16857,8		16858,8		16859,16	16860,40
+17109,16	17110,56	17111,56	17112,56	17113,24	17114,56	17115,16	17116,40
+17365,16	17366,40	17367,8		17368,8		17369,8		17370,32	17371,16	17372,40
+17621,215	17622,187	17623,187	17624,235	17625,187	17626,187	17627,187	17628,187
+
+Los valores decimales de los bits son de ink Cyan, paper Black, y empieza con el 128 brillante y alterna brillo:
+
+  128		   64		  32		  16		   8		   4		   2		   1
+
+20501,124
+		20758,124	20759,68	20760,72
+21013,116	21014,84	21015,84	21016,124	21017,124	21018,28	21019,116	21020,72
+21269,84	21270,112	21271,124	21272,64	21273,84	21274,16	21275,84	21276,124
+21525,92							21529,124	21530,124	21531,92	21532,64
+		21782,28	21783,116	21784,124	
+22037,124	22038,16	22039,84	22040,84	
+22293,84	22294,124	22295,92	22296,112	
+
+20533,124
+

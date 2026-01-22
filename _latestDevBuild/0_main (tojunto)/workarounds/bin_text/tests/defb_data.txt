@@ -1,0 +1,14 @@
+       16823, 17079, 17335, 17591, 17847,      ,      ,      <-- Text
+       16597, 16853, 17109, 17365, 17621,      ,      ,      <-- Bit numbers
+     , 20758, 21013, 21269, 21525, 21782, 22037, 22293,      <-- Decimal values
+
+
+	4,5,5,5,5,
+	8,8,8,8,8,		<-- Número de direcciones que se recorrerán con un loop.
+	3,8,8,8,3,4,4
+
+
+defb 16823,17079,17335,17591,17847,16597,16853,17109,17365,17621,20758,21013,21269,21525,21782,22037,22293
+
+defb 4,5,5,5,5,8,8,8,8,8,3,8,8,8,3,4,4	<-- Son 17 loops, con 'n' número de loops anidados, donde la dirección inicial
+						son las direcciones de la línea de arriba.

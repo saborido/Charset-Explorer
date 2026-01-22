@@ -7,3 +7,6 @@
 3. Se ha eliminado del BASIC el dibujado de la rejilla, implementándolo en ensamblador. Se han hecho
    cambios bastante drásticos en la parte BASIC, así que hay que probarlo extensamente antes de
    implementar más cosas en asm. En la rutina 'char2grid.asm'.
+
+4. Bueno, he seguido implementando cosas en asm, bastantes. ¿Lo he probado extensamente antes de
+   implementarlo? Para nada...

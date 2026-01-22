@@ -2,7 +2,7 @@
 
 ;MicroHobby charsets menu. Aquí seleccionamos un charset para probarlo.
 
-    ;ORG 60686
+    ;ORG 60531
 
 ;MAIN
 
@@ -83,14 +83,15 @@ ret     ;Salimos de la rutina.
 
 ;-------------------------------------- SUBRUTINAS ----------------------------------------;
 
+
 MODE_CHK:
 	ld a, (SPCCY_MODE)	;128k mode is on?
 	cp 0
 ret	;Volvemos a la rutina principal.
 
 
-
 ;---------------------------------- VARIABLES Y TEXTOS ------------------------------------;
+
 
 USEFUL_UDG
         db 22, 5, 9, 16, 9, 17, 3, 19, 1, "U-UDG ", 16, 0   ;Magenta (UDG).
@@ -135,6 +136,22 @@ SELBOT_TXT  db 22, 0, 0, 17, 0, 16, 6, "+", 16, 1, 17, 7, "CShift", 17, 0, 16, 5
             db 22, 1, 0, 17, 1, 16, 7, "0", 17, 0, 16, 6, "..", 17, 1, 16, 7, "9", 17, 0, 16, 5, ":Other locations", 23, 26, " "
 EOFSELBOTT  equ $
 
+
+;COLOUR & POSITION CONTROL CODES TABLE:
+;
+;	16	- INK (0, 1, 2, 3, 4, 5, 6, 7, 8 or 9)
+;	17	- PAPER (0, 1, 2, 3, 4, 5, 6, 7, 8 or 9)
+;	18	- FLASH (0, 1 or 8)
+;	19	- BRIGHT (0, 1 or 8)
+;	20	- INVERSE (0, 1 or 8)
+;	21	- OVER (0, 1 or 8)
+;
+;	 6	- Midscreen tabulation (comma).
+;	22	- AT command (expects AT and two numbers)
+;	23	- TAB command (expects TAB and a number).
+
+
 ;--------------------------------------- LABELS -------------------------------------------;
+
 
 SPCCY_MODE  equ 62967       ;En esta dir se guarda el modo del Spectrum (0 = 48k, 1 = 128k).

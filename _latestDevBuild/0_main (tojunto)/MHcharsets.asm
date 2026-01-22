@@ -121,6 +121,7 @@ LOOP_CHR
     call Y_INC6
 ret     ;Volvemos a la rutina principal.
 
+;-----------------------
 
 TXT_CHRSET:
     call AT_SCR         ;Nos posicinamos en Y.
@@ -129,6 +130,7 @@ TXT_CHRSET:
     call 8252
 ret     ;Volvemos a la rutina principal.
 
+;-----------------------
 
 AT_SCR:
     ld a, 22            ;Comando AT (de PRINT AT)
@@ -139,6 +141,7 @@ AT_SCR:
     rst 16
 ret     ;Volvemos a la rutina principal.
 
+;-----------------------
 
 Y_INC6:                  ;Incrementamos la fila 6 unidades (eje y)
     ld a, (SCR_POS)
@@ -146,6 +149,7 @@ Y_INC6:                  ;Incrementamos la fila 6 unidades (eje y)
     ld (SCR_POS), a
 ret     ;Volvemos a la rutina principal.
 
+;-----------------------
 
 MH_PAINT:               ;Pintamos los colores del logo de MicroHobby.
     ld b, 5
@@ -156,6 +160,7 @@ LOOP_MHCOL
     djnz LOOP_MHCOL
 ret     ;Volvemos a la rutina principal.
 
+;-----------------------
 
 MHLOGO:                 ;Letras ciberneticas de MicroHobby.
     ld hl, MH_LOGO
@@ -191,6 +196,7 @@ ret     ;Volvemos a la rutina principal.
 
 ;---------------------------------- VARIABLES Y TEXTOS ------------------------------------;
 
+
 SCR_POS db 5            ;Posición 'y' de la pantalla (texto).
 
 T_CHAR  db 22, 1, 9, 19, 1, 17, 6, "CHARACTER SETS", 17, 4
@@ -225,6 +231,7 @@ MH_LOGO db 126, 60, 126, 124, 126   ;Scan 1 MICRO       ;MH Logo: 40 bytes.
 
 
 ;--------------------------------------- LABELS -------------------------------------------;
+
 
     ;Rutinas de la ROM:
 

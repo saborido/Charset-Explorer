@@ -1,4 +1,7 @@
-;===> Charset Explorer pre RC2 <===> 'bin_text.asm' v3 (376 bytes) <===
+;===> Charset Explorer pre RC2 <===> 'bin_text.asm' v2 (376 bytes) <===
+
+;Rutina que dibuja el marco (bit number, valor del bit, unas flachas, etc) del modo Binario.
+
 
     ;ORG 62224
 

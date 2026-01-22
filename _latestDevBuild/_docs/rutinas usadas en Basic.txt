@@ -1,16 +1,34 @@
-
  Línea:		Rutina:
  ------		-------
-    36		-USR 62975 (módulo de 32)
-    63		-USR 63039 ('MHcharsets.asm', select ROM charset)
-    96		-USR 62610 ('inkeys.asm', inkey_edit)
-   610		-USR 62620 ('inkeys.asm', inkey_main)
-  1050		-USR 61292 ('char2grid.asm')
-  1430		-USR 60686 ('useful_loc.asm')
-  1550		-USR 62630 ('inkeys.asm', inkey_locations)
-  2515		-USR 62600 ('inkeys.asm', inkey_save)
-  7337		-USR 62224 ('bin_text.asm')
-  7450		-USR 61736 ('MHcharsets.asm')
-  7470		-USR ((c-49)*5+63044) ('inkeys.asm', select charset A-B-C, según selección pulsada)
-  8990		-USR 62224 ('bin_text.asm')
+     1		-CLEAR VAL "60271" (RAMTOP).
+    36		-USR 62975 (módulo de 32).
+    87		-USR 60251 ('_UGDchange.asm', Change UDG System Variable).
+    90		-USR 60352 ('outer_grid.asm').
+    96		-USR 62610 ('inkeys.asm', inkey_edit).
+   205		-USR 60259 ('_UGDchange.asm', Reset UDG System Variable).
+   207		-USR 60352 ('outer_grid.asm').
+   610		-USR 62620 ('inkeys.asm', inkey_main).
+*  813		-USR 60259 ('_UGDchange.asm', Reset UDG System Variable)
+		-USR 63039 (rutina MHC).
+  1050		-USR 61137 ('char2grid.asm').
+  1430		-USR 60531 ('useful_loc.asm').
+  1550		-USR 62630 ('inkeys.asm', inkey_locations).
+  2225		-USR 61137 ('char2grid.asm').
+  2515		-USR 62600 ('inkeys.asm', inkey_save).
+  7337		-USR 62224 ('bin_text.asm').
+  7390		-USR 60352 ('outer_grid.asm').
+* 7450		-USR 63039 (rutina MHC)
+		-USR 61736 ('MHcharsets.asm').
+  7470		-USR ((c-49)*5+63044) ('inkeys.asm', select charset A-B-C, según selección pulsada).
+* 9030		-USR 63039 (rutina MHC).
+		-USR 60352 ('outer_grid.asm')
+  9185		-USR 60266 ('checkboard.asm').
+  9900		-En el SAVE "d_chars" CODE VAL "60272", VAL "5096" (justo después del RAMTOP).
 
+ * Se espera resetear la variable del sistema CHARS a la de la ROM, y se usa la de la rutina de selección
+   de charset de MicroHobby.
+
+  	YA NO EXISTEN:
+
+  	8990		-USR 62224 ('bin_text.asm')
+	  63		-USR 63039 (rutina MHC)

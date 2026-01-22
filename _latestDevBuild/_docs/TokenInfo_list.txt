@@ -1,0 +1,9 @@
+-Info sobre el char:
+
+A --> INK 1,  "0"  , n=0
+B --> INK 5,  "."  , n>0 AND n<32
+C --> INK 4, CHR$ n, n>31 AND n<128
+D --> INK 2, CHR$ n, n>127 AND n<144
+E --> INK 6,  "T"  , (md AND n>162) OR n>164
+
+F --> INK 3, CHR$ n-79, IF m$="" AND (n>143 AND n<165)
