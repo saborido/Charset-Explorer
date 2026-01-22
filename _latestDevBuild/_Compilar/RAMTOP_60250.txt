@@ -1,0 +1,3 @@
+CLEAR 60250
+
+You need HiSoft Basic compiler for the 128k Spectrum to compile.
