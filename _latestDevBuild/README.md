@@ -7,9 +7,9 @@ de la rejilla).
 ```
 >Zona actual mas alta de la memoria libre (RAMTOP) antes de compilar: 60685
 
------------------------- DATOS ESTÁTICOS (RUTINAS ASM) ---------------------	RAMTOP:		 bloque:
-    -USR: ENDS:									-------		 ------
-    ----- -----									 61319		  2275 bytes.
+------------------------ DATOS ESTÁTICOS (RUTINAS ASM) ---------------------
+    -USR: ENDS:
+    ----- -----
 R:-|60251-60265: Rutina '_UGDchange.asm'    -- PROBANDO --	--  15 bytes.
    \
 (R:-|-USR 60251: Entrada de rutina "Change UDG system Variable".)
